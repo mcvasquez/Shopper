@@ -80,4 +80,7 @@ fastlane/test_output
 # OS
 .DS_Store
 
+# Google Services
+GoogleService-Info.plist
+
 # End of https://www.gitignore.io/api/xcode,swift
