@@ -7,29 +7,73 @@
 //
 
 import XCTest
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+
 @testable import shopper
 
 class shopperTests: XCTestCase {
+    let aEmail = "danielcabri@gmail.com"
+    let aPass = "123456"
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testConectionToDatabase() {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        XCTAssertNotNil(ref, "Es Nil")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testRegisterFirebase() {
+        let expect = expectation(description: "CreateFirebaseUser")
+        Auth.auth().createUser(withEmail: aEmail, password: aPass) { (user, error) in
+            guard error == nil else {
+                XCTFail("the auth has not be succesfully")
+                return
+            }
+            debugPrint(user?.email ?? "Not email")
+            debugPrint("Success creating user")
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+    
+    }
+    
+    func testSignInFirebase()  {
+        let expect = expectation(description: "SignInUser")
+        Auth.auth().signIn(withEmail: aEmail, password: aPass) { (user, error) in
+            guard error == nil else {
+                XCTFail("the auth has not be succesfully")
+                return
+            }
+            debugPrint(user?.email ?? "Not email")
+            debugPrint("Success Sign In")
+            expect.fulfill()
+        }
+        
+        
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+    }
+    
+    func testSignOutFirebase()  {
+        do {
+            try Auth.auth().signOut()
+        } catch  {
+            XCTFail("Fail going out")
         }
     }
     

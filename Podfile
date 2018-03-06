@@ -7,6 +7,12 @@ target 'shopper' do
   inhibit_all_warnings!
 
   # Pods for shopper
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Database'
+  pod 'Firebase/Crash'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
   target 'shopperTests' do
     inherit! :search_paths
