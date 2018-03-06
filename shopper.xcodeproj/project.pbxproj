@@ -19,6 +19,7 @@
 		5AFC1322204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
 		5AFC1328204E878C00310FFA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1327204E878C00310FFA /* SignInViewController.swift */; };
 		5AFC132B204E87E100310FFA /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC132A204E87E100310FFA /* SignOutViewController.swift */; };
+		5AFC132E204E887600310FFA /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC132D204E887600310FFA /* FirebaseHelper.swift */; };
 		730149BEB189379AA438E081 /* Pods_shopperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC37E814535B68F7767A4D06 /* Pods_shopperUITests.framework */; };
 		FB26819A1CC01596F2DAC517 /* Pods_shopperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AFC1327204E878C00310FFA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5AFC132A204E87E100310FFA /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
+		5AFC132D204E887600310FFA /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		5C6950BB58EC513810CF487F /* Pods-shopperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E67E18C86E6BF86AE7B7D7C9 /* Pods-shopper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopper.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopper/Pods-shopper.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		250C9CB5204C2D2000019EB1 /* shopper */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC132C204E885F00310FFA /* Helper */,
 				5AFC1323204E874B00310FFA /* Scenes */,
 				5AFC131E204E797300310FFA /* shopper.entitlements */,
 				250C9CB6204C2D2000019EB1 /* AppDelegate.swift */,
@@ -197,6 +200,14 @@
 				5AFC132A204E87E100310FFA /* SignOutViewController.swift */,
 			);
 			path = SignOut;
+			sourceTree = "<group>";
+		};
+		5AFC132C204E885F00310FFA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5AFC132D204E887600310FFA /* FirebaseHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFC132E204E887600310FFA /* FirebaseHelper.swift in Sources */,
 				5AFC1328204E878C00310FFA /* SignInViewController.swift in Sources */,
 				5AFC132B204E87E100310FFA /* SignOutViewController.swift in Sources */,
 				250C9CB7204C2D2000019EB1 /* AppDelegate.swift in Sources */,
