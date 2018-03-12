@@ -27,15 +27,15 @@ class ProfileMenuTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,6 +46,38 @@ class ProfileMenuTableViewController: UITableViewController {
         return cell
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0 { // GENERAL
+            switch indexPath.row {
+            case 0: // Mis articulos
+                break
+            case 1: // Mis pedidos
+                break
+            default:
+                break
+            }
+        } else if indexPath.section == 1 { // CONFIGURACIÓN
+            switch indexPath.row {
+            case 0: // Editar mi perfil
+                break
+            case 1: // Actualizar contraseña
+                break
+            case 2: // Cerrar sesión
+                FirebaseHelper.SignOut(completionHandler: { response, _ in
+                    if response {
+                        self.navigationController?.popViewController(animated: true)
+                    } else {
+                        self.present(yesAlert(title: "Información", message: "Ha habido un error cerrando sesión", positiveText: "Ok", positiveAction: nil), animated: true, completion: nil)
+                    }
+                })
+                break
+            default:
+                break
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

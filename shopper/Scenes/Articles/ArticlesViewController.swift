@@ -18,7 +18,7 @@ class ArticlesViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
         title = "Articulos"
         
-        let userAccountItem = UIBarButtonItem(image: UIImage(named: "UserAccount"), style: .plain, target: self, action: nil)
+        let userAccountItem = UIBarButtonItem(image: UIImage(named: "UserAccount"), style: .plain, target: self, action: #selector(didSelectUserAccount))
         self.navigationItem.rightBarButtonItem = userAccountItem
     }
     
@@ -68,5 +68,16 @@ class ArticlesViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "showArticleDetails", sender: nil)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - Actions
+    @objc func didSelectUserAccount() {
+        FirebaseHelper.isAlreadySignIn { response, _ in
+            if response {
+                self.performSegue(withIdentifier: "showProfile", sender: nil)
+            } else {
+                self.performSegue(withIdentifier: "showSignIn", sender: nil)
+            }
+        }
     }
 }
