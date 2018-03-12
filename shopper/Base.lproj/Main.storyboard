@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aoy-Yb-R1f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,48 +11,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="3QX-ds-sgg">
-            <objects>
-                <navigationController id="7cI-zs-kM5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yvd-h6-hJu">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="C1T-hB-3gG" kind="relationship" relationship="rootViewController" id="Txn-cC-gLf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0iF-iY-N61" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-357" y="-72"/>
-        </scene>
-        <!--Sign In View Controller-->
-        <scene sceneID="nfN-2l-gZ3">
-            <objects>
-                <viewController id="C1T-hB-3gG" customClass="SignInViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nCu-kd-BVH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="lTX-BC-29d"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9W7-x6-1bZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iDk-ce-qEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="491" y="-61"/>
-        </scene>
         <!--SignIn-->
         <scene sceneID="7qT-NI-jL0">
             <objects>
-                <viewController title="SignIn" id="g2e-ci-UHM" sceneMemberID="viewController">
+                <viewController title="SignIn" id="g2e-ci-UHM" customClass="SignInViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iOw-Ba-Yrr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ePY-Zn-xzU">
-                                <rect key="frame" x="20" y="40" width="335" height="131"/>
+                                <rect key="frame" x="20" y="84" width="335" height="131"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KjV-N7-3xH">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="55.5"/>
@@ -91,11 +59,14 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OnI-FJ-3FI">
-                                <rect key="frame" x="31.5" y="191" width="312" height="65"/>
+                                <rect key="frame" x="31.5" y="235" width="312" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cP2-7r-GAA">
                                         <rect key="frame" x="110.5" y="0.0" width="91" height="30"/>
                                         <state key="normal" title="Iniciar Sesión"/>
+                                        <connections>
+                                            <action selector="didSignIn:" destination="g2e-ci-UHM" eventType="touchUpInside" id="Ndi-gH-7lp"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="JUS-Vr-3p0">
                                         <rect key="frame" x="0.0" y="35" width="312" height="30"/>
@@ -103,10 +74,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkW-EQ-5bI">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
                                                 <state key="normal" title="Registrarme"/>
+                                                <connections>
+                                                    <action selector="didRegister:" destination="g2e-ci-UHM" eventType="touchUpInside" id="UnF-ah-s9B"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNt-1e-qxc">
                                                 <rect key="frame" x="134" y="0.0" width="178" height="30"/>
                                                 <state key="normal" title="¿Olvidaste tu contraseña?"/>
+                                                <connections>
+                                                    <action selector="didForgotPassword:" destination="g2e-ci-UHM" eventType="touchUpInside" id="hVv-zi-zZQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -123,21 +100,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i7G-ej-0qn"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="Hcn-E2-X6I" id="YBA-Hp-h0N"/>
+                        <outlet property="password" destination="icT-pN-RAG" id="Yrj-Zn-bng"/>
+                        <segue destination="77l-bu-sVh" kind="show" id="mOc-Ee-cT9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4r-JJ-gvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="670"/>
+            <point key="canvasLocation" x="2302" y="2178"/>
         </scene>
         <!--Profile-->
         <scene sceneID="c6R-qj-Fau">
             <objects>
-                <viewController title="Profile" id="lPl-qP-Ffl" sceneMemberID="viewController">
+                <viewController title="Profile" id="lPl-qP-Ffl" customClass="ProfileViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b9P-Q5-Iat">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cc5-Q0-62v">
-                                <rect key="frame" x="0.0" y="40" width="375" height="126"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="126"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNQ-qe-kcW">
                                         <rect key="frame" x="150" y="0.0" width="75" height="75"/>
@@ -166,7 +148,7 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSv-02-ZAZ">
-                                <rect key="frame" x="0.0" y="166" width="375" height="501"/>
+                                <rect key="frame" x="0.0" y="210" width="375" height="457"/>
                                 <connections>
                                     <segue destination="ZFr-ds-yDP" kind="embed" id="Zxu-MY-Q6P"/>
                                 </connections>
@@ -184,17 +166,23 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="45O-Eh-hTT"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="WKi-47-Tsh" id="aCO-pd-sBl"/>
+                        <outlet property="menuView" destination="nSv-02-ZAZ" id="y7y-Ew-lPM"/>
+                        <outlet property="name" destination="ldQ-TH-WZI" id="0v6-fU-wa2"/>
+                        <outlet property="thumbnail" destination="gNQ-qe-kcW" id="hsT-kq-7b0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhI-QG-zfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3044" y="670"/>
+            <point key="canvasLocation" x="1542" y="2968"/>
         </scene>
         <!--Profile Menu-->
         <scene sceneID="eOc-W9-DuN">
             <objects>
-                <tableViewController title="Profile Menu" id="ZFr-ds-yDP" sceneMemberID="viewController">
+                <tableViewController title="Profile Menu" id="ZFr-ds-yDP" customClass="ProfileMenuTableViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kDU-lV-5Vh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="501"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -300,18 +288,18 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJp-Vo-dIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3740" y="670"/>
+            <point key="canvasLocation" x="2302" y="2967"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="03t-IT-071">
             <objects>
-                <viewController title="SignUp" id="77l-bu-sVh" sceneMemberID="viewController">
+                <viewController title="SignUp" id="77l-bu-sVh" customClass="SignUpViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ib-0h-TRW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dtx-zQ-Co8">
-                                <rect key="frame" x="20" y="40" width="335" height="373"/>
+                                <rect key="frame" x="20" y="84" width="335" height="373"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lvS-BG-ggK">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="111"/>
@@ -326,6 +314,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siP-5E-x14">
                                                 <rect key="frame" x="82.5" y="81" width="170" height="30"/>
                                                 <state key="normal" title="Agregar imagen de perfil"/>
+                                                <connections>
+                                                    <action selector="didAddProfileImage:" destination="77l-bu-sVh" eventType="touchUpInside" id="3b5-y0-JZN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -400,8 +391,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWa-k8-p6A">
-                                <rect key="frame" x="145.5" y="433" width="84" height="30"/>
+                                <rect key="frame" x="145.5" y="477" width="84" height="30"/>
                                 <state key="normal" title="Registrarme"/>
+                                <connections>
+                                    <action selector="didSignUp:" destination="77l-bu-sVh" eventType="touchUpInside" id="364-22-kfT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -414,24 +408,31 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qEE-GF-KRm"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="464-ib-rhJ" id="gIi-ag-SpY"/>
+                        <outlet property="email" destination="MD2-BP-55y" id="xcw-y1-Irc"/>
+                        <outlet property="name" destination="Dbc-AO-DU0" id="SUx-xM-fau"/>
+                        <outlet property="password" destination="FpU-Zj-HnF" id="oW8-2W-iPb"/>
+                        <outlet property="thumbnail" destination="08f-XR-gWe" id="Jmp-Cb-wZX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zr6-bs-xC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="670"/>
+            <point key="canvasLocation" x="3369" y="2177"/>
         </scene>
         <!--Articles-->
         <scene sceneID="x9A-gh-8kt">
             <objects>
-                <viewController title="Articles" id="Vgg-KU-c4b" sceneMemberID="viewController">
+                <viewController title="Articles" id="Vgg-KU-c4b" customClass="ArticlesViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6wU-zW-38i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="agr-U8-3An">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FOk-g7-chp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articlesCell" id="FOk-g7-chp" customClass="ArticlesTableViewCell" customModule="shopper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FOk-g7-chp" id="D7C-Ol-twS">
@@ -497,6 +498,11 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="j3e-gQ-243" secondAttribute="bottom" id="xrs-Z7-5Pn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="price" destination="gLf-hH-1OV" id="z9I-J0-rG7"/>
+                                            <outlet property="thumbnail" destination="yN4-eD-swL" id="Yo0-OU-xou"/>
+                                            <outlet property="title" destination="cUM-e1-fcg" id="Don-Jj-gNw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -514,21 +520,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="o78-gl-YPZ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ErH-rH-p98"/>
+                    <connections>
+                        <outlet property="tableView" destination="agr-U8-3An" id="3jb-a3-HvI"/>
+                        <segue destination="2br-Uo-Thv" kind="show" identifier="showArticleDetails" id="XZ1-f6-zW1"/>
+                        <segue destination="lPl-qP-Ffl" kind="show" id="JJ2-f9-khp"/>
+                        <segue destination="g2e-ci-UHM" kind="show" id="sYH-dj-tjB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqy-hS-7Yo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="1415"/>
+            <point key="canvasLocation" x="1542" y="1416"/>
         </scene>
         <!--Article View-->
         <scene sceneID="6t2-LN-CcT">
             <objects>
-                <viewController title="Article View" id="2br-Uo-Thv" sceneMemberID="viewController">
+                <viewController title="Article View" id="2br-Uo-Thv" customClass="ArticleDetailsViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Lo-GD-iK2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx1-xs-OHv">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggu-oz-3Bf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
@@ -617,8 +630,11 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqG-f3-Dd9">
-                                                        <rect key="frame" x="129.5" y="205.5" width="116" height="30"/>
-                                                        <state key="normal" title="Comprar articulo"/>
+                                                        <rect key="frame" x="118.5" y="205.5" width="137" height="30"/>
+                                                        <state key="normal" title="Contactar vendedor"/>
+                                                        <connections>
+                                                            <action selector="didContactButton:" destination="2br-Uo-Thv" eventType="touchUpInside" id="bjW-eU-jUA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -667,35 +683,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hm7-MZ-1gt"/>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="Bv5-Nq-6Tr" id="J6v-Wf-BTd"/>
+                        <outlet property="articleDescription" destination="01n-bP-leN" id="iha-ng-hmF"/>
+                        <outlet property="articleTitle" destination="fvb-dV-yPT" id="Xjc-Er-w9N"/>
+                        <outlet property="condition" destination="JMw-Ed-oAY" id="pVt-7F-wc0"/>
+                        <outlet property="contentView" destination="ggu-oz-3Bf" id="03R-eL-cH1"/>
+                        <outlet property="price" destination="Cwz-A3-VJl" id="xak-bf-XvL"/>
+                        <outlet property="scrollView" destination="hx1-xs-OHv" id="lO3-42-0It"/>
+                        <outlet property="thumbnail" destination="GxE-m0-4lW" id="eVg-71-tvg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Qu-aJ-kjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2302" y="1416"/>
-        </scene>
-        <!--Sign Out View Controller-->
-        <scene sceneID="U7t-0F-bzR">
-            <objects>
-                <viewController id="aDK-Ic-FOg" customClass="SignOutViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3S0-TZ-e4T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="7jL-QY-bCD"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m8C-Wp-etU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-358" y="635"/>
+            <point key="canvasLocation" x="2302" y="1408"/>
         </scene>
         <!--Article Manage-->
         <scene sceneID="ZP1-IH-FBe">
             <objects>
-                <viewController title="Article Manage" id="VhG-hT-UeI" sceneMemberID="viewController">
+                <viewController title="Article Manage" id="VhG-hT-UeI" customClass="ManageArticleViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3xe-uW-RaW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUI-ae-frl">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUI-ae-frl">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gn8-fp-qF8">
@@ -717,6 +728,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Sg-0t-11f">
                                                                 <rect key="frame" x="113" y="81" width="109" height="30"/>
                                                                 <state key="normal" title="Agregar imagen"/>
+                                                                <connections>
+                                                                    <action selector="didAddImage:" destination="VhG-hT-UeI" eventType="touchUpInside" id="QfB-dQ-TjW"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -816,6 +830,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT6-yk-sJW">
                                                 <rect key="frame" x="140.5" y="548.5" width="94" height="30"/>
                                                 <state key="normal" title="Crear articulo"/>
+                                                <connections>
+                                                    <action selector="didManageArticle:" destination="VhG-hT-UeI" eventType="touchUpInside" id="OE0-t2-QNv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -847,10 +864,49 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eVi-nE-I5C"/>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="LgS-hQ-LBE" id="Vn9-O4-5XP"/>
+                        <outlet property="articleDescription" destination="2lx-Hq-uKO" id="ww0-ND-ihm"/>
+                        <outlet property="articleTitle" destination="f4M-wd-2nf" id="o6T-H9-Qy1"/>
+                        <outlet property="condition" destination="sPB-zr-ZlR" id="igr-qv-aF6"/>
+                        <outlet property="contentView" destination="Gn8-fp-qF8" id="rZ0-xW-2x1"/>
+                        <outlet property="price" destination="fu5-I9-Owi" id="hd3-ps-fu0"/>
+                        <outlet property="scrollView" destination="AUI-ae-frl" id="bDI-WC-3UU"/>
+                        <outlet property="thumbnail" destination="4BW-y6-0vp" id="IMb-HT-YYD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfB-Iw-ba7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3044" y="1417"/>
+            <point key="canvasLocation" x="3369" y="2872"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c8C-ZJ-wZn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Aoy-Yb-R1f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vfh-4O-blJ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.59607843140000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CDq-fc-vnY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="Vgg-KU-c4b" kind="relationship" relationship="rootViewController" id="vDo-xF-MYZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mrA-la-vbW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="1416"/>
         </scene>
     </scenes>
 </document>
