@@ -1,17 +1,19 @@
 //
-//  SignInViewController.swift
+//  ProfileViewController.swift
 //  shopper
 //
-//  Created by Daniel Cabrera on 3/6/18.
+//  Created by Misael Cuevas Vásquez on 3/12/18.
 //  Copyright © 2018 Cuevas Cabrera. All rights reserved.
 //
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var menuView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +37,4 @@ class SignInViewController: UIViewController {
     }
     */
 
-    // MARK: - Actions
-    @IBAction func didSignIn(_ sender: Any) {
-    }
-    
-    @IBAction func didRegister(_ sender: Any) {
-    }
-    
-    @IBAction func didForgotPassword(_ sender: Any) {
-    }
 }

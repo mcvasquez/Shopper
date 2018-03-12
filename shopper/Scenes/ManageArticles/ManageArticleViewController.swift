@@ -1,17 +1,23 @@
 //
-//  SignInViewController.swift
+//  ManageArticleViewController.swift
 //  shopper
 //
-//  Created by Daniel Cabrera on 3/6/18.
+//  Created by Misael Cuevas Vásquez on 3/12/18.
 //  Copyright © 2018 Cuevas Cabrera. All rights reserved.
 //
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class ManageArticleViewController: UIViewController {
 
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var articleTitle: UITextField!
+    @IBOutlet weak var price: UITextField!
+    @IBOutlet weak var condition: UITextField!
+    @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var articleDescription: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +40,11 @@ class SignInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
     // MARK: - Actions
-    @IBAction func didSignIn(_ sender: Any) {
+    @IBAction func didAddImage(_ sender: Any) {
     }
     
-    @IBAction func didRegister(_ sender: Any) {
-    }
-    
-    @IBAction func didForgotPassword(_ sender: Any) {
+    @IBAction func didManageArticle(_ sender: Any) {
     }
 }

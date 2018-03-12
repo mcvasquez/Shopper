@@ -1,15 +1,21 @@
 //
-//  SignOutViewController.swift
+//  SignUpViewController.swift
 //  shopper
 //
-//  Created by Daniel Cabrera on 3/6/18.
+//  Created by Misael Cuevas Vásquez on 3/12/18.
 //  Copyright © 2018 Cuevas Cabrera. All rights reserved.
 //
 
 import UIKit
 
-class SignOutViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +38,10 @@ class SignOutViewController: UIViewController {
     }
     */
 
+    // MARK: - Actions
+    @IBAction func didAddProfileImage(_ sender: Any) {
+    }
+    
+    @IBAction func didSignUp(_ sender: Any) {
+    }
 }

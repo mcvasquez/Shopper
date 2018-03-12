@@ -13,12 +13,18 @@
 		250C9CC1204C2D2000019EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 250C9CBF204C2D2000019EB1 /* LaunchScreen.storyboard */; };
 		250C9CCC204C2D2000019EB1 /* shopperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C9CCB204C2D2000019EB1 /* shopperTests.swift */; };
 		250C9CD7204C2D2000019EB1 /* shopperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250C9CD6204C2D2000019EB1 /* shopperUITests.swift */; };
+		2536D99320567AA800B075A2 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D99220567AA800B075A2 /* ArticlesViewController.swift */; };
+		2536D99520567E6300B075A2 /* ArticlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D99420567E6300B075A2 /* ArticlesTableViewCell.swift */; };
+		2536D9982056930400B075A2 /* ArticleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D9972056930400B075A2 /* ArticleDetailsViewController.swift */; };
+		2536D99C20569D7000B075A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D99B20569D7000B075A2 /* SignUpViewController.swift */; };
+		2536D99F20569E3E00B075A2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D99E20569E3E00B075A2 /* ProfileViewController.swift */; };
+		2536D9A220569EDC00B075A2 /* ProfileMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D9A120569EDC00B075A2 /* ProfileMenuTableViewController.swift */; };
+		2536D9A52056B3D000B075A2 /* ManageArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D9A42056B3D000B075A2 /* ManageArticleViewController.swift */; };
 		49BBD42B296431852066DA75 /* Pods_shopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */; };
 		5AFC1320204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
 		5AFC1321204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
 		5AFC1322204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
 		5AFC1328204E878C00310FFA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC1327204E878C00310FFA /* SignInViewController.swift */; };
-		5AFC132B204E87E100310FFA /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC132A204E87E100310FFA /* SignOutViewController.swift */; };
 		5AFC132E204E887600310FFA /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC132D204E887600310FFA /* FirebaseHelper.swift */; };
 		730149BEB189379AA438E081 /* Pods_shopperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC37E814535B68F7767A4D06 /* Pods_shopperUITests.framework */; };
 		FB26819A1CC01596F2DAC517 /* Pods_shopperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */; };
@@ -55,6 +61,13 @@
 		250C9CD2204C2D2000019EB1 /* shopperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shopperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		250C9CD6204C2D2000019EB1 /* shopperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopperUITests.swift; sourceTree = "<group>"; };
 		250C9CD8204C2D2000019EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2536D99220567AA800B075A2 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		2536D99420567E6300B075A2 /* ArticlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewCell.swift; sourceTree = "<group>"; };
+		2536D9972056930400B075A2 /* ArticleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewController.swift; sourceTree = "<group>"; };
+		2536D99B20569D7000B075A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2536D99E20569E3E00B075A2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2536D9A120569EDC00B075A2 /* ProfileMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewController.swift; sourceTree = "<group>"; };
+		2536D9A42056B3D000B075A2 /* ManageArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageArticleViewController.swift; sourceTree = "<group>"; };
 		2B920923DFC60D8D950F7DE8 /* Pods-shopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopper/Pods-shopper.debug.xcconfig"; sourceTree = "<group>"; };
 		4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF68CFD3C2C42E3B2A1EA33 /* Pods-shopperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,7 +75,6 @@
 		5AFC131E204E797300310FFA /* shopper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shopper.entitlements; sourceTree = "<group>"; };
 		5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AFC1327204E878C00310FFA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		5AFC132A204E87E100310FFA /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		5AFC132D204E887600310FFA /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		5C6950BB58EC513810CF487F /* Pods-shopperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +166,55 @@
 			path = shopperUITests;
 			sourceTree = "<group>";
 		};
+		2536D99120567A4A00B075A2 /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				2536D99220567AA800B075A2 /* ArticlesViewController.swift */,
+				2536D99420567E6300B075A2 /* ArticlesTableViewCell.swift */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		2536D9962056929D00B075A2 /* ArticleDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2536D9972056930400B075A2 /* ArticleDetailsViewController.swift */,
+			);
+			path = ArticleDetails;
+			sourceTree = "<group>";
+		};
+		2536D99920569D5400B075A2 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				2536D99B20569D7000B075A2 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		2536D99D20569E2800B075A2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2536D99E20569E3E00B075A2 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		2536D9A020569EC000B075A2 /* ProfileMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2536D9A120569EDC00B075A2 /* ProfileMenuTableViewController.swift */,
+			);
+			path = ProfileMenu;
+			sourceTree = "<group>";
+		};
+		2536D9A32056B39E00B075A2 /* ManageArticles */ = {
+			isa = PBXGroup;
+			children = (
+				2536D9A42056B3D000B075A2 /* ManageArticleViewController.swift */,
+			);
+			path = ManageArticles;
+			sourceTree = "<group>";
+		};
 		3277BFB8B8B5CA5D0F638743 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,8 +241,13 @@
 		5AFC1323204E874B00310FFA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				5AFC1329204E87CE00310FFA /* SignOut */,
+				2536D9A32056B39E00B075A2 /* ManageArticles */,
+				2536D9962056929D00B075A2 /* ArticleDetails */,
+				2536D99120567A4A00B075A2 /* Articles */,
+				2536D99D20569E2800B075A2 /* Profile */,
+				2536D9A020569EC000B075A2 /* ProfileMenu */,
 				5AFC1324204E875200310FFA /* SignIn */,
+				2536D99920569D5400B075A2 /* SignUp */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -192,14 +258,6 @@
 				5AFC1327204E878C00310FFA /* SignInViewController.swift */,
 			);
 			path = SignIn;
-			sourceTree = "<group>";
-		};
-		5AFC1329204E87CE00310FFA /* SignOut */ = {
-			isa = PBXGroup;
-			children = (
-				5AFC132A204E87E100310FFA /* SignOutViewController.swift */,
-			);
-			path = SignOut;
 			sourceTree = "<group>";
 		};
 		5AFC132C204E885F00310FFA /* Helper */ = {
@@ -519,10 +577,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2536D99520567E6300B075A2 /* ArticlesTableViewCell.swift in Sources */,
+				2536D99C20569D7000B075A2 /* SignUpViewController.swift in Sources */,
 				5AFC132E204E887600310FFA /* FirebaseHelper.swift in Sources */,
+				2536D9982056930400B075A2 /* ArticleDetailsViewController.swift in Sources */,
 				5AFC1328204E878C00310FFA /* SignInViewController.swift in Sources */,
-				5AFC132B204E87E100310FFA /* SignOutViewController.swift in Sources */,
 				250C9CB7204C2D2000019EB1 /* AppDelegate.swift in Sources */,
+				2536D9A52056B3D000B075A2 /* ManageArticleViewController.swift in Sources */,
+				2536D9A220569EDC00B075A2 /* ProfileMenuTableViewController.swift in Sources */,
+				2536D99F20569E3E00B075A2 /* ProfileViewController.swift in Sources */,
+				2536D99320567AA800B075A2 /* ArticlesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
