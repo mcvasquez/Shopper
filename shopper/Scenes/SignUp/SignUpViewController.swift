@@ -16,10 +16,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "Crear cuenta"
+        imagePicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,8 +44,61 @@ class SignUpViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func didAddProfileImage(_ sender: Any) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func didSignUp(_ sender: Any) {
+        if email.text!.isEmpty || password.text!.isEmpty || name.text!.isEmpty || confirmPassword.text!.isEmpty || thumbnail.image == nil {
+            self.present(yesAlert(title: "Información",
+                                  message: "Favor de completar todos los campos.",
+                                  positiveText: "Ok",
+                                  positiveAction: nil),
+                         animated: true,
+                         completion: nil)
+            return
+        }
+        
+        if !isValidEmail(testStr: email.text!) {
+            self.present(yesAlert(title: "Información", message: "Email inválido.", positiveText: "Ok", positiveAction: nil), animated: true, completion: nil)
+            return
+        }
+        
+        if password.text!.compare(confirmPassword.text!) != .orderedSame {
+            self.present(yesAlert(title: "Información",
+                                  message: "Las contraseñas no son iguales.",
+                                  positiveText: "Ok",
+                                  positiveAction: nil),
+                         animated: true,
+                         completion: nil)
+            return
+        }
+        
+        if password.text!.count < 6 {
+            self.present(yesAlert(title: "Información",
+                                  message: "La contraseña debe tener 6 caracteres de largo o más.",
+                                  positiveText: "Ok",
+                                  positiveAction: nil),
+                         animated: true,
+                         completion: nil)
+            return
+        }
+        
+        FirebaseHelper.CreateFirebaseUser(aEmail: email.text!, aPass: password.text!) { response, _ in
+            if response {
+                FirebaseHelper.setUserData(name: self.name.text!, thumbnail: self.thumbnail.image!, completion: { response, _ in
+                })
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.present(yesAlert(title: "Información",
+                                      message: "Ha habido un error creando su cuenta.",
+                                      positiveText: "Ok",
+                                      positiveAction: nil),
+                             animated: true,
+                             completion: nil)
+            }
+        }
     }
 }
