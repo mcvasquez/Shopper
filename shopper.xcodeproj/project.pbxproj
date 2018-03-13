@@ -21,6 +21,8 @@
 		2536D9A220569EDC00B075A2 /* ProfileMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D9A120569EDC00B075A2 /* ProfileMenuTableViewController.swift */; };
 		2536D9A52056B3D000B075A2 /* ManageArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2536D9A42056B3D000B075A2 /* ManageArticleViewController.swift */; };
 		25491F742057291000DF4FD5 /* AlertsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25491F732057291000DF4FD5 /* AlertsFactory.swift */; };
+		2560B84C20585B54005D9E53 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84B20585B54005D9E53 /* ForgotPasswordViewController.swift */; };
+		2560B84E205861B7005D9E53 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84D205861B7005D9E53 /* ValidationHelper.swift */; };
 		49BBD42B296431852066DA75 /* Pods_shopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */; };
 		5AFC1320204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
 		5AFC1321204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
@@ -70,6 +72,8 @@
 		2536D9A120569EDC00B075A2 /* ProfileMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewController.swift; sourceTree = "<group>"; };
 		2536D9A42056B3D000B075A2 /* ManageArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageArticleViewController.swift; sourceTree = "<group>"; };
 		25491F732057291000DF4FD5 /* AlertsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsFactory.swift; sourceTree = "<group>"; };
+		2560B84B20585B54005D9E53 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		2560B84D205861B7005D9E53 /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
 		2B920923DFC60D8D950F7DE8 /* Pods-shopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopper/Pods-shopper.debug.xcconfig"; sourceTree = "<group>"; };
 		4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF68CFD3C2C42E3B2A1EA33 /* Pods-shopperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +221,14 @@
 			path = ManageArticles;
 			sourceTree = "<group>";
 		};
+		2560B84A20585B3D005D9E53 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				2560B84B20585B54005D9E53 /* ForgotPasswordViewController.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 		3277BFB8B8B5CA5D0F638743 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +255,7 @@
 		5AFC1323204E874B00310FFA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2560B84A20585B3D005D9E53 /* ForgotPassword */,
 				2536D9A32056B39E00B075A2 /* ManageArticles */,
 				2536D9962056929D00B075A2 /* ArticleDetails */,
 				2536D99120567A4A00B075A2 /* Articles */,
@@ -267,6 +280,7 @@
 			children = (
 				5AFC132D204E887600310FFA /* FirebaseHelper.swift */,
 				25491F732057291000DF4FD5 /* AlertsFactory.swift */,
+				2560B84D205861B7005D9E53 /* ValidationHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -592,7 +606,9 @@
 				2536D9982056930400B075A2 /* ArticleDetailsViewController.swift in Sources */,
 				5AFC1328204E878C00310FFA /* SignInViewController.swift in Sources */,
 				250C9CB7204C2D2000019EB1 /* AppDelegate.swift in Sources */,
+				2560B84E205861B7005D9E53 /* ValidationHelper.swift in Sources */,
 				2536D9A52056B3D000B075A2 /* ManageArticleViewController.swift in Sources */,
+				2560B84C20585B54005D9E53 /* ForgotPasswordViewController.swift in Sources */,
 				2536D9A220569EDC00B075A2 /* ProfileMenuTableViewController.swift in Sources */,
 				2536D99F20569E3E00B075A2 /* ProfileViewController.swift in Sources */,
 				2536D99320567AA800B075A2 /* ArticlesViewController.swift in Sources */,

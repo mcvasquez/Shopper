@@ -59,5 +59,6 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func didForgotPassword(_ sender: Any) {
+        self.performSegue(withIdentifier: "showForgotPassword", sender: nil)
     }
 }
