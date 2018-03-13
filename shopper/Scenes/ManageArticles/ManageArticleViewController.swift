@@ -22,6 +22,8 @@ class ManageArticleViewController: UIViewController, UINavigationControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view.
     }
 
@@ -51,6 +53,14 @@ class ManageArticleViewController: UIViewController, UINavigationControllerDeleg
     @IBAction func didManageArticle(_ sender: Any) {
         FirebaseHelper.setArticleData(address: address.text!, image: thumbnail.image!, description: articleDescription.text!, price: price.text!, title: articleTitle.text!) { (sucess, message) in
             debugPrint(message)
+            if sucess {
+                
+            }
         }
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }

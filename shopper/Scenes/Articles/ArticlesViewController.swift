@@ -21,7 +21,9 @@ class ArticlesViewController: UIViewController, UITableViewDelegate{
         // Do any additional setup after loading the view.
         title = "Articulos"
         let userAccountItem = UIBarButtonItem(image: UIImage(named: "UserAccount"), style: .plain, target: self, action: #selector(didSelectUserAccount))
+        let articleAccountItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(didSelectCreateArticle))
         self.navigationItem.rightBarButtonItem = userAccountItem
+        self.navigationItem.leftBarButtonItem = articleAccountItem
         onCreateTableview()
     }
     

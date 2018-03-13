@@ -526,6 +526,7 @@
                         <segue destination="2br-Uo-Thv" kind="show" identifier="showArticleDetails" id="XZ1-f6-zW1"/>
                         <segue destination="lPl-qP-Ffl" kind="show" identifier="showProfile" id="JJ2-f9-khp"/>
                         <segue destination="g2e-ci-UHM" kind="show" identifier="showSignIn" id="sYH-dj-tjB"/>
+                        <segue destination="VhG-hT-UeI" kind="show" identifier="showArticleCreate" id="ovM-bZ-XaN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqy-hS-7Yo" userLabel="First Responder" sceneMemberID="firstResponder"/>

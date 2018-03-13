@@ -22,6 +22,16 @@ extension ArticlesViewController {
         }
     }
     
+    @objc func didSelectCreateArticle() {
+        FirebaseHelper.isAlreadySignIn { response, _ in
+            if response {
+                self.goingToPerformSegue("showArticleCreate")
+            } else {
+                self.goingToPerformSegue("showSignIn")
+            }
+        }
+    }
+    
     func goingToPerformSegue(_ fromIdentifier : String) {
         self.performSegue(withIdentifier: fromIdentifier, sender: nil)
     }
