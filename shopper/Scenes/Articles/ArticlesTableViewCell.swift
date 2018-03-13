@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ArticlesTableViewCell: UITableViewCell {
 
@@ -17,12 +18,23 @@ class ArticlesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func populateCellWithArticles(_ aArticle : Articles) {
+        title.text = aArticle.title
+        price.text = "$\(String(aArticle.price))"
+        thumbnail.kf.setImage(with: URL(string: aArticle.image),
+                              placeholder: nil,
+                              options: [.transition(.fade(1))],
+                              progressBlock: nil,
+                              completionHandler: nil)
     }
 
 }
