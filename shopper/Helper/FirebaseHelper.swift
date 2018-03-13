@@ -15,6 +15,7 @@ struct FirebaseHelper {
     
     enum FirebaseDBKeys : String {
         case users
+        case articles
     }
     
     static var ref: DatabaseReference! = {
@@ -97,9 +98,39 @@ struct FirebaseHelper {
                 return
             }
             let userID = Auth.auth().currentUser?.uid
-            let userReference = FirebaseHelper.ref.child("users").child(userID!)
+            let userReference = FirebaseHelper.ref.child(FirebaseDBKeys.users.rawValue).child(userID!)
             let values = ["name": name, "thumbnail": url!.absoluteString] as [String : Any]
             userReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                
+                print("sucess")
+                guard error == nil else {
+                    return
+                }
+                
+                completion(true, "user has being record")
+                debugPrint("sucess")
+            })
+            
+        }
+    }
+    
+    static func articlesQuery() -> DatabaseQuery  {
+        let ref = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue)
+        return ref.queryOrderedByKey()
+    }
+    
+    static func setArticleData(address: String ,image: UIImage, description: String, price: String, title : String, completion: @escaping (Bool,String) -> ()) {
+        uploadImage(image: image) { (url, message) in
+            debugPrint(message)
+            guard url != nil else {
+                completion(false,"There was an error saving image")
+                return
+            }
+            let userID = Auth.auth().currentUser?.uid
+            let aPrice = Double(price)
+            let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(UUID().uuidString)
+            let values = ["address": address, "image": url!.absoluteString, "description" : description, "price": aPrice!, "title" : title, "timestamp": Date().timeIntervalSince1970, "user/\(userID!)" : true] as [String : Any]
+            artReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
                 
                 print("sucess")
                 guard error == nil else {
