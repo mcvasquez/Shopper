@@ -23,6 +23,8 @@
 		25491F742057291000DF4FD5 /* AlertsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25491F732057291000DF4FD5 /* AlertsFactory.swift */; };
 		2560B84C20585B54005D9E53 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84B20585B54005D9E53 /* ForgotPasswordViewController.swift */; };
 		2560B84E205861B7005D9E53 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84D205861B7005D9E53 /* ValidationHelper.swift */; };
+		2560B850205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */; };
+		2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */; };
 		49BBD42B296431852066DA75 /* Pods_shopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */; };
 		5AFC1320204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
 		5AFC1321204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
@@ -74,6 +76,8 @@
 		25491F732057291000DF4FD5 /* AlertsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsFactory.swift; sourceTree = "<group>"; };
 		2560B84B20585B54005D9E53 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		2560B84D205861B7005D9E53 /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
+		2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
+		2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
 		2B920923DFC60D8D950F7DE8 /* Pods-shopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopper/Pods-shopper.debug.xcconfig"; sourceTree = "<group>"; };
 		4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF68CFD3C2C42E3B2A1EA33 /* Pods-shopperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				2536D99B20569D7000B075A2 /* SignUpViewController.swift */,
+				2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */,
+				2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -610,8 +616,10 @@
 				2536D9A52056B3D000B075A2 /* ManageArticleViewController.swift in Sources */,
 				2560B84C20585B54005D9E53 /* ForgotPasswordViewController.swift in Sources */,
 				2536D9A220569EDC00B075A2 /* ProfileMenuTableViewController.swift in Sources */,
+				2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */,
 				2536D99F20569E3E00B075A2 /* ProfileViewController.swift in Sources */,
 				2536D99320567AA800B075A2 /* ArticlesViewController.swift in Sources */,
+				2560B850205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,13 +45,19 @@ class SignInViewController: UIViewController {
                                   positiveAction: nil),
                          animated: true,
                          completion: nil)
-        } else {
-            FirebaseHelper.SignInFirebase(aEmail: email.text!, aPass: password.text!, completionHandler: { response, _ in
-                if response {
-                    self.navigationController?.popViewController(animated: true)
-                }
-            })
+            return
         }
+        
+        if !isValidEmail(testStr: email.text!) {
+            self.present(yesAlert(title: "Información", message: "Email inválido.", positiveText: "Ok", positiveAction: nil), animated: true, completion: nil)
+            return
+        }
+        
+        FirebaseHelper.SignInFirebase(aEmail: email.text!, aPass: password.text!, completionHandler: { response, _ in
+            if response {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
     }
     
     @IBAction func didRegister(_ sender: Any) {

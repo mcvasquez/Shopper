@@ -24,6 +24,13 @@ class ProfileViewController: UIViewController {
         if let user =  Auth.auth().currentUser {
             email.text = user.email
             name.text = user.displayName
+            
+            FirebaseHelper.getUserData(completionHandler: { data, response  in
+                if response {
+                    self.name.text = data!["name"] as? String ?? ""
+                }
+            })
+            
         } else {
             self.dismiss(animated: true, completion: nil)
         }
