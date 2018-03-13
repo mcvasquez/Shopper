@@ -14,7 +14,7 @@ import FirebaseAuth
 @testable import shopper
 
 class shopperTests: XCTestCase {
-    let aEmail = "danielcabri@gmail.com"
+    let aEmail = "dcabrera@outlook.es"
     let aPass = "123456"
     
     override func setUp() {
@@ -53,17 +53,10 @@ class shopperTests: XCTestCase {
     
     func testSignInFirebase()  {
         let expect = expectation(description: "SignInUser")
-        Auth.auth().signIn(withEmail: aEmail, password: aPass) { (user, error) in
-            guard error == nil else {
-                XCTFail("the auth has not be succesfully")
-                return
-            }
-            debugPrint(user?.email ?? "Not email")
-            debugPrint("Success Sign In")
+        FirebaseHelper.SignInFirebase(aEmail: aEmail, aPass: aPass) { (success, message) in
+            debugPrint(message)
             expect.fulfill()
         }
-        
-        
         waitForExpectations(timeout: 10.0, handler: { (error) in
             print("Error: \(String(describing: error?.localizedDescription))")
         })
@@ -76,5 +69,44 @@ class shopperTests: XCTestCase {
             XCTFail("Fail going out")
         }
     }
+    
+    func testGetUser() {
+        let expect = expectation(description: "Users get")
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let username = value?["name"] as? String ?? ""
+            XCTAssertEqual(username, "Daniel Cabrera")
+            debugPrint(username)
+            expect.fulfill()
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+        
+    }
+    
+    func testUserImage() {
+        let expect = expectation(description: "Users send")
+        let image = UIImage(named: "zelda")
+        FirebaseHelper.setUserData(name: "Juancho", thumbnail: image!) { (succes, message) in
+            debugPrint(message)
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+    }
+    
+   
     
 }
