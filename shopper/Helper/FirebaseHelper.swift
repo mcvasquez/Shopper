@@ -97,8 +97,19 @@ struct FirebaseHelper {
                 return
             }
             let userID = Auth.auth().currentUser?.uid
-            self.ref.child("users").child(userID!).setValue(["name": name, "thumbnail": url?.absoluteString])
-            completion(true, "user has being record")
+            let userReference = FirebaseHelper.ref.child("users").child(userID!)
+            let values = ["name": name, "thumbnail": url!.absoluteString] as [String : Any]
+            userReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                
+                print("sucess")
+                guard error == nil else {
+                    return
+                }
+                
+                completion(true, "user has being record")
+                debugPrint("sucess")
+            })
+            
         }
     }
 }

@@ -14,7 +14,7 @@ import FirebaseAuth
 @testable import shopper
 
 class shopperTests: XCTestCase {
-    let aEmail = "danielcabri@gmail.com"
+    let aEmail = "dcabrera@outlook.es"
     let aPass = "123456"
     
     override func setUp() {
@@ -79,7 +79,6 @@ class shopperTests: XCTestCase {
             // Get user value
             let value = snapshot.value as? NSDictionary
             let username = value?["name"] as? String ?? ""
-            //let user = User(username: username)
             XCTAssertEqual(username, "Daniel Cabrera")
             debugPrint(username)
             expect.fulfill()
@@ -98,7 +97,7 @@ class shopperTests: XCTestCase {
     func testUserImage() {
         let expect = expectation(description: "Users send")
         let image = UIImage(named: "zelda")
-        FirebaseHelper.setUserData(name: "Dcabrera", thumbnail: image!) { (succes, message) in
+        FirebaseHelper.setUserData(name: "Juancho", thumbnail: image!) { (succes, message) in
             debugPrint(message)
             expect.fulfill()
         }
