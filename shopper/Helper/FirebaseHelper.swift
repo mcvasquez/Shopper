@@ -15,6 +15,7 @@ struct FirebaseHelper {
     
     enum FirebaseDBKeys : String {
         case users
+        case articles
     }
     
     static var ref: DatabaseReference! = {
@@ -97,7 +98,7 @@ struct FirebaseHelper {
                 return
             }
             let userID = Auth.auth().currentUser?.uid
-            let userReference = FirebaseHelper.ref.child("users").child(userID!)
+            let userReference = FirebaseHelper.ref.child(FirebaseDBKeys.users.rawValue).child(userID!)
             let values = ["name": name, "thumbnail": url!.absoluteString] as [String : Any]
             userReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
                 
@@ -111,5 +112,10 @@ struct FirebaseHelper {
             })
             
         }
+    }
+    
+    static func articlesQuery() -> DatabaseQuery  {
+        let ref = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue)
+        return ref.queryOrderedByKey()
     }
 }

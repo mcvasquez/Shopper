@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ArticleDetailsViewController: UIViewController {
 
@@ -18,29 +19,36 @@ class ArticleDetailsViewController: UIViewController {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var articleDescription: UITextView!
+    var aArticle : Articles?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        onCreateArticleInformation()
     }
-
+    
+    func onCreateArticleInformation() {
+        guard aArticle != nil else {
+            debugPrint("Fail to retrieve article")
+            return
+        }
+        articleTitle.text = aArticle?.title
+        condition.text = String(describing: aArticle!.timestamp)
+        price.text = "$\(String(aArticle!.price))"
+        address.text = aArticle?.address
+        articleDescription.text = aArticle?.description
+        thumbnail.kf.setImage(with: URL(string: aArticle!.image),
+                              placeholder: nil,
+                              options: [.transition(.fade(1))],
+                              progressBlock: nil,
+                              completionHandler: nil)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: - Actions
     @IBAction func didContactButton(_ sender: Any) {
     }
