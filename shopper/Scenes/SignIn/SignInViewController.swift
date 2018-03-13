@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "Iniciar Sesión"
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,9 +38,24 @@ class SignInViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func didSignIn(_ sender: Any) {
+        if email.text!.isEmpty || password.text!.isEmpty {
+            self.present(yesAlert(title: "Información",
+                                  message: "Favor de completar todos los campos.",
+                                  positiveText: "Ok",
+                                  positiveAction: nil),
+                         animated: true,
+                         completion: nil)
+        } else {
+            FirebaseHelper.SignInFirebase(aEmail: email.text!, aPass: password.text!, completionHandler: { response, _ in
+                if response {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+        }
     }
     
     @IBAction func didRegister(_ sender: Any) {
+        self.performSegue(withIdentifier: "showSignUp", sender: nil)
     }
     
     @IBAction func didForgotPassword(_ sender: Any) {

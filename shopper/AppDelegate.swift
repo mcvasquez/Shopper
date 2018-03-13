@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
+        // Disk Persistence
+        Database.database().isPersistenceEnabled = true
+        
         UIApplication.shared.statusBarStyle = .lightContent
         UINavigationBar.appearance().barStyle = .blackOpaque
         

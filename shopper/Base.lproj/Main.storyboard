@@ -35,7 +35,7 @@
                                                 <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -52,7 +52,7 @@
                                                 <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -103,7 +103,7 @@
                     <connections>
                         <outlet property="email" destination="Hcn-E2-X6I" id="YBA-Hp-h0N"/>
                         <outlet property="password" destination="icT-pN-RAG" id="Yrj-Zn-bng"/>
-                        <segue destination="77l-bu-sVh" kind="show" id="mOc-Ee-cT9"/>
+                        <segue destination="77l-bu-sVh" kind="show" identifier="showSignUp" id="mOc-Ee-cT9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4r-JJ-gvR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,17 +148,17 @@
                                 </subviews>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSv-02-ZAZ">
-                                <rect key="frame" x="0.0" y="210" width="375" height="457"/>
+                                <rect key="frame" x="0.0" y="230" width="375" height="437"/>
                                 <connections>
                                     <segue destination="ZFr-ds-yDP" kind="embed" id="Zxu-MY-Q6P"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nSv-02-ZAZ" firstAttribute="leading" secondItem="45O-Eh-hTT" secondAttribute="leading" id="2nR-7h-HEy"/>
                             <constraint firstItem="45O-Eh-hTT" firstAttribute="trailing" secondItem="nSv-02-ZAZ" secondAttribute="trailing" id="8br-g2-xc9"/>
-                            <constraint firstItem="nSv-02-ZAZ" firstAttribute="top" secondItem="cc5-Q0-62v" secondAttribute="bottom" id="Rn2-Gt-fGa"/>
+                            <constraint firstItem="nSv-02-ZAZ" firstAttribute="top" secondItem="cc5-Q0-62v" secondAttribute="bottom" constant="20" id="Rn2-Gt-fGa"/>
                             <constraint firstItem="cc5-Q0-62v" firstAttribute="leading" secondItem="45O-Eh-hTT" secondAttribute="leading" id="Z2y-3K-uwy"/>
                             <constraint firstItem="cc5-Q0-62v" firstAttribute="top" secondItem="45O-Eh-hTT" secondAttribute="top" constant="20" id="bjx-3p-j8g"/>
                             <constraint firstItem="45O-Eh-hTT" firstAttribute="bottom" secondItem="nSv-02-ZAZ" secondAttribute="bottom" id="boW-4f-E3A"/>
@@ -182,7 +182,7 @@
             <objects>
                 <tableViewController title="Profile Menu" id="ZFr-ds-yDP" customClass="ProfileMenuTableViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kDU-lV-5Vh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="457"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="437"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -350,7 +350,7 @@
                                                 <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -367,7 +367,7 @@
                                                 <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -384,7 +384,7 @@
                                                 <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -524,8 +524,8 @@
                     <connections>
                         <outlet property="tableView" destination="agr-U8-3An" id="3jb-a3-HvI"/>
                         <segue destination="2br-Uo-Thv" kind="show" identifier="showArticleDetails" id="XZ1-f6-zW1"/>
-                        <segue destination="lPl-qP-Ffl" kind="show" id="JJ2-f9-khp"/>
-                        <segue destination="g2e-ci-UHM" kind="show" id="sYH-dj-tjB"/>
+                        <segue destination="lPl-qP-Ffl" kind="show" identifier="showProfile" id="JJ2-f9-khp"/>
+                        <segue destination="g2e-ci-UHM" kind="show" identifier="showSignIn" id="sYH-dj-tjB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqy-hS-7Yo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -764,7 +764,7 @@
                                                                 <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>

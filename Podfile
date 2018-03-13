@@ -13,7 +13,11 @@ target 'shopper' do
   pod 'Firebase/Crash'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
-
+  
+  pod 'FirebaseUI/Database', '~> 4.0'
+  pod 'FirebaseUI/Storage', '~> 4.0'
+  pod 'FirebaseUI/Auth', '~> 4.0'
+  
   target 'shopperTests' do
     inherit! :search_paths
     # Pods for testing
