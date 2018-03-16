@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class ManageArticleViewController: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
@@ -23,23 +24,12 @@ class ManageArticleViewController: UIViewController, UINavigationControllerDeleg
     let picker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        // basic usage
         picker.delegate = self
         scrollContentView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
-        // Do any additional setup after loading the view.
-        weak var weakSelf = self
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut,
-                       animations: {
-                        weakSelf?.scrollContentView.transform = CGAffineTransform(scaleX:1, y:1)
-        }) { done in
-            
-            UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseInOut,
-                           animations: {  
-                             weakSelf?.scrollContentView.transform = .identity
-            })
-            
-        }
+        onBeginControllerAnimation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,16 +56,35 @@ class ManageArticleViewController: UIViewController, UINavigationControllerDeleg
     }
     
     @IBAction func didManageArticle(_ sender: Any) {
+        self.view.makeToast("Articulo enviado :)")
         FirebaseHelper.setArticleData(address: address.text!, image: thumbnail.image!, description: articleDescription.text!, price: price.text!, title: articleTitle.text!) { (sucess, message) in
             debugPrint(message)
             if sucess {
                 
             }
         }
-        self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+             self.navigationController?.popViewController(animated: true)
+        }
+       
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    func onBeginControllerAnimation() {
+        weak var weakSelf = self
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut,
+                       animations: {
+                        weakSelf?.scrollContentView.transform = CGAffineTransform(scaleX:1, y:1)
+        }) { done in
+            
+            UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseInOut,
+                           animations: {
+                            weakSelf?.scrollContentView.transform = .identity
+            })
+            
+        }
     }
 }

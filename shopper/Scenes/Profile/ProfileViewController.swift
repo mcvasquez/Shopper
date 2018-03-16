@@ -12,6 +12,7 @@ import Kingfisher
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileStackView: UIStackView!
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var email: UILabel!
@@ -19,8 +20,22 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        weak var weakSelf = self
+        profileStackView.transform = CGAffineTransform(scaleX:0, y:0)
+        profileStackView.alpha = 0.0
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut,
+                       animations: {
+                        weakSelf?.profileStackView.transform = CGAffineTransform(scaleX:1.2, y:1.2)
+                        weakSelf?.profileStackView.alpha = 0.5
+        }) { done in
+            
+            UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseInOut,
+                           animations: {
+                            weakSelf?.profileStackView.transform = .identity
+                            weakSelf?.profileStackView.alpha = 1.0
+            })
+            
+        }
         
         if let user =  Auth.auth().currentUser {
             email.text = user.email

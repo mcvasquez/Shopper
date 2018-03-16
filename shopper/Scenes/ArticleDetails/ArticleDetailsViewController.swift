@@ -27,20 +27,6 @@ class ArticleDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         thumbnail.alpha = 0.0
         stackView.alpha = 0.0
-        weak var weakSelf = self
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut,
-                       animations: {
-                        weakSelf?.thumbnail.alpha = 0.0
-                        weakSelf?.stackView.alpha = 0.0
-        }) { done in
-            
-            UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseInOut,
-                           animations: {
-                            weakSelf?.thumbnail.alpha = 1.0
-                            weakSelf?.stackView.alpha = 1.0
-                            
-            })
-        }
         onCreateArticleInformation()
     }
     
@@ -59,12 +45,30 @@ class ArticleDetailsViewController: UIViewController {
                               options: [.transition(.fade(1))],
                               progressBlock: nil,
                               completionHandler: nil)
+        onCreateAnimation()
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func onCreateAnimation() {
+        weak var weakSelf = self
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut,
+                       animations: {
+                        weakSelf?.thumbnail.alpha = 0.0
+                        weakSelf?.stackView.alpha = 0.0
+        }) { done in
+            
+            UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseInOut,
+                           animations: {
+                            weakSelf?.thumbnail.alpha = 1.0
+                            weakSelf?.stackView.alpha = 1.0
+                            
+            })
+        }
     }
     // MARK: - Actions
     @IBAction func didContactButton(_ sender: Any) {

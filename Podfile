@@ -18,6 +18,7 @@ target 'shopper' do
   pod 'FirebaseUI/Storage', '~> 4.0'
   pod 'FirebaseUI/Auth', '~> 4.0'
   pod 'Kingfisher'
+  pod 'Toast-Swift', '~> 3.0.1'
   
   target 'shopperTests' do
     inherit! :search_paths

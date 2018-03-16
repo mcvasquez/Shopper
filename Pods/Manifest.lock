@@ -81,6 +81,7 @@ PODS:
   - SDWebImage (4.3.2):
     - SDWebImage/Core (= 4.3.2)
   - SDWebImage/Core (4.3.2)
+  - Toast-Swift (3.0.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -93,6 +94,7 @@ DEPENDENCIES:
   - FirebaseUI/Database (~> 4.0)
   - FirebaseUI/Storage (~> 4.0)
   - Kingfisher
+  - Toast-Swift (~> 3.0.1)
 
 SPEC CHECKSUMS:
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
@@ -112,7 +114,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
+  Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
 
-PODFILE CHECKSUM: d59e9398072876f5bc2236428368506d85184aba
+PODFILE CHECKSUM: ab71e208462cfa66e93462b34bf4a0fc4d1a0fa4
 
 COCOAPODS: 1.4.0
