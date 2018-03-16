@@ -27,7 +27,16 @@ extension ArticlesViewController {
             if response {
                 self.goingToPerformSegue("showArticleCreate")
             } else {
-                self.goingToPerformSegue("showSignIn")
+                self.present(yesNoAlert(title: "Información",
+                                        message: "Debe iniciar sesión para crear articulos.",
+                                        positiveText: "Iniciar Sesión", positiveAction: {
+                                            self.goingToPerformSegue("showSignIn")
+                                        },
+                                        negativeText: "Cancelar",
+                                        negativeAction: nil),
+                             animated: true,
+                             completion: nil)
+                
             }
         }
     }
