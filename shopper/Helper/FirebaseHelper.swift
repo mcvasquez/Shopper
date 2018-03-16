@@ -116,7 +116,7 @@ struct FirebaseHelper {
     
     static func articlesQuery() -> DatabaseQuery  {
         let ref = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue)
-        return ref.queryOrderedByKey()
+        return ref.queryOrdered(byChild: "position")
     }
     
     static func setArticleData(address: String ,image: UIImage, description: String, price: String, title : String, completion: @escaping (Bool,String) -> ()) {
@@ -129,7 +129,18 @@ struct FirebaseHelper {
             let userID = Auth.auth().currentUser?.uid
             let aPrice = Double(price)
             let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(UUID().uuidString)
-            let values = ["address": address, "image": url!.absoluteString, "description" : description, "price": aPrice!, "title" : title, "timestamp": Date().timeIntervalSince1970, "user/\(userID!)" : true] as [String : Any]
+            let timestamp = Date().timeIntervalSince1970
+            let values = [
+                "address": address,
+                "image": url!.absoluteString,
+                "description" : description,
+                "price": aPrice!,
+                "title" : title,
+                "timestamp": timestamp,
+                "position": Double("-\(timestamp)")!,
+                "user/\(userID!)" : true
+            ] as [String : Any]
+            
             artReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
                 
                 print("sucess")

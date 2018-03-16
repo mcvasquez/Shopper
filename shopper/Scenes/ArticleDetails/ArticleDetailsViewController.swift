@@ -35,9 +35,13 @@ class ArticleDetailsViewController: UIViewController {
             debugPrint("Fail to retrieve article")
             return
         }
+        
+        let df = DateFormatter()
+        df.dateFormat = "dd/MM/yyyy"
+        
         articleTitle.text = aArticle?.title
-        condition.text = String(describing: aArticle!.timestamp)
-        price.text = "$\(String(aArticle!.price))"
+        condition.text = df.string(from: aArticle!.timestamp)
+        price.text = aArticle!.price.toCurrency()
         address.text = aArticle?.address
         articleDescription.text = aArticle?.description
         thumbnail.kf.setImage(with: URL(string: aArticle!.image),
