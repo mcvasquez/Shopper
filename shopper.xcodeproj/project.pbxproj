@@ -29,6 +29,8 @@
 		25F8E4FA205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4F9205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift */; };
 		25F8E4FC205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4FB205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift */; };
 		25F8E4FE205C0E2200171136 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4FD205C0E2200171136 /* UIImage+Extensions.swift */; };
+		25F8E500205C2A8200171136 /* ProfileMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4FF205C2A8200171136 /* ProfileMenuDelegate.swift */; };
+		25F8E502205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E501205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift */; };
 		49BBD42B296431852066DA75 /* Pods_shopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */; };
 		5A4EA0482057F34A00B16787 /* ArticlesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA0472057F34A00B16787 /* ArticlesRouter.swift */; };
 		5A4EA04A205807EE00B16787 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA049205807EE00B16787 /* ArticlesModel.swift */; };
@@ -90,6 +92,8 @@
 		25F8E4F9205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageArticleViewController+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
 		25F8E4FB205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageArticleViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		25F8E4FD205C0E2200171136 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		25F8E4FF205C2A8200171136 /* ProfileMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuDelegate.swift; sourceTree = "<group>"; };
+		25F8E501205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ProfileMenuDelegate.swift"; sourceTree = "<group>"; };
 		2B920923DFC60D8D950F7DE8 /* Pods-shopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopper/Pods-shopper.debug.xcconfig"; sourceTree = "<group>"; };
 		4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF68CFD3C2C42E3B2A1EA33 /* Pods-shopperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				2536D99E20569E3E00B075A2 /* ProfileViewController.swift */,
+				25F8E501205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				2536D9A120569EDC00B075A2 /* ProfileMenuTableViewController.swift */,
+				25F8E4FF205C2A8200171136 /* ProfileMenuDelegate.swift */,
 			);
 			path = ProfileMenu;
 			sourceTree = "<group>";
@@ -646,6 +652,7 @@
 				5ADEC3FA205841D60075CF68 /* ArticlesDetailsInteractor.swift in Sources */,
 				2536D99C20569D7000B075A2 /* SignUpViewController.swift in Sources */,
 				25F8E4FA205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift in Sources */,
+				25F8E500205C2A8200171136 /* ProfileMenuDelegate.swift in Sources */,
 				5A4EA0482057F34A00B16787 /* ArticlesRouter.swift in Sources */,
 				5AFC132E204E887600310FFA /* FirebaseHelper.swift in Sources */,
 				2536D9982056930400B075A2 /* ArticleDetailsViewController.swift in Sources */,
@@ -661,6 +668,7 @@
 				5ADEC3F7205834650075CF68 /* ArticlesInteractor.swift in Sources */,
 				25F8E4FC205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift in Sources */,
 				5A4EA04A205807EE00B16787 /* ArticlesModel.swift in Sources */,
+				25F8E502205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift in Sources */,
 				2536D99F20569E3E00B075A2 /* ProfileViewController.swift in Sources */,
 				2536D99320567AA800B075A2 /* ArticlesViewController.swift in Sources */,
 				2560B850205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift in Sources */,
