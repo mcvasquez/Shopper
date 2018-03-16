@@ -9,7 +9,7 @@
 import UIKit
 import Toast_Swift
 
-class ManageArticleViewController: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class ManageArticleViewController: UIViewController {
 
     @IBOutlet weak var contentViewWidth: NSLayoutConstraint!
     @IBOutlet weak var scrollContentView: UIView!
@@ -41,18 +41,8 @@ class ManageArticleViewController: UIViewController, UINavigationControllerDeleg
     @IBAction func didAddImage(_ sender: Any) {
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
-        picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        
         present(picker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
-        thumbnail.image = chosenImage
-        dismiss(animated:true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didManageArticle(_ sender: Any) {

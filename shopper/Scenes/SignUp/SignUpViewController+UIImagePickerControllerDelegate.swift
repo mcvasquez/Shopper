@@ -12,19 +12,9 @@ import UIKit
 extension SignUpViewController : UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            thumbnail.contentMode = .scaleAspectFit
             thumbnail.image = pickedImage
-            
-            thumbnail.layer.borderWidth = 1
-            thumbnail.layer.masksToBounds = false
-            thumbnail.layer.borderColor = UIColor.black.cgColor
-            thumbnail.layer.cornerRadius = thumbnail.frame.height/2
-            thumbnail.clipsToBounds = true
+            thumbnail.toRounded(borderWidth: 1, borderColor: nil)
         }
-        
-//        if let pickedImageURL = info[UIImagePickerControllerImageURL] as? URL {
-//            self.pickedPhotoURL = pickedImageURL
-//        }
         
         dismiss(animated: true, completion: nil)
     }
