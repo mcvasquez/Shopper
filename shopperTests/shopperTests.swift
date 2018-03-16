@@ -107,6 +107,19 @@ class shopperTests: XCTestCase {
         })
     }
     
+    func testArticle() {
+        let expect = expectation(description: "Users send")
+        let image = UIImage(named: "zelda")
+        FirebaseHelper.setArticleData(address: "Zelda", image: image!, description: "Logotipo de zelda", price: "100000", title: "Logo oficial de zelda") { (succes, message) in
+            debugPrint(message)
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+    }
+    
    
     
 }

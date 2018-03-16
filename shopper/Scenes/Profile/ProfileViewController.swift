@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class ProfileViewController: UIViewController {
 
@@ -24,6 +25,28 @@ class ProfileViewController: UIViewController {
         if let user =  Auth.auth().currentUser {
             email.text = user.email
             name.text = user.displayName
+            
+            FirebaseHelper.getUserData(completionHandler: { data, response  in
+                if response {
+                    self.name.text = data!["name"] as? String ?? ""
+                    
+                    if let imageUrl =  data!["thumbnail"] as? String {
+                        self.thumbnail.kf.setImage(with: URL(string: imageUrl),
+                                              placeholder: nil,
+                                              options: [.transition(.fade(1))],
+                                              progressBlock: nil,
+                                              completionHandler: nil)
+                        
+                        self.thumbnail.contentMode = .scaleAspectFit
+                        self.thumbnail.layer.borderWidth = 1
+                        self.thumbnail.layer.masksToBounds = false
+                        self.thumbnail.layer.borderColor = UIColor.black.cgColor
+                        self.thumbnail.layer.cornerRadius = self.thumbnail.frame.height/2
+                        self.thumbnail.clipsToBounds = true
+                    }
+                }
+            })
+            
         } else {
             self.dismiss(animated: true, completion: nil)
         }
