@@ -58,7 +58,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OnI-FJ-3FI">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OnI-FJ-3FI" userLabel="we">
                                 <rect key="frame" x="31.5" y="235" width="312" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cP2-7r-GAA">
@@ -89,20 +89,29 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-Hi-EkF">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OnI-FJ-3FI" firstAttribute="centerX" secondItem="iOw-Ba-Yrr" secondAttribute="centerX" id="4gF-Ox-5Q9"/>
                             <constraint firstItem="ePY-Zn-xzU" firstAttribute="top" secondItem="i7G-ej-0qn" secondAttribute="top" constant="20" id="AOT-1p-Avn"/>
                             <constraint firstItem="i7G-ej-0qn" firstAttribute="trailing" secondItem="ePY-Zn-xzU" secondAttribute="trailing" constant="20" id="TT9-ka-Iuf"/>
+                            <constraint firstItem="uv1-Hi-EkF" firstAttribute="centerY" secondItem="iOw-Ba-Yrr" secondAttribute="centerY" id="de6-fL-I6M"/>
+                            <constraint firstItem="uv1-Hi-EkF" firstAttribute="centerX" secondItem="iOw-Ba-Yrr" secondAttribute="centerX" id="hm6-b8-FhC"/>
                             <constraint firstItem="OnI-FJ-3FI" firstAttribute="top" secondItem="ePY-Zn-xzU" secondAttribute="bottom" constant="20" id="w4V-ML-GcB"/>
                             <constraint firstItem="ePY-Zn-xzU" firstAttribute="leading" secondItem="i7G-ej-0qn" secondAttribute="leading" constant="20" id="xMb-gn-ufa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i7G-ej-0qn"/>
                     </view>
                     <connections>
+                        <outlet property="buttonsStackView" destination="OnI-FJ-3FI" id="Phl-8i-wPz"/>
                         <outlet property="email" destination="Hcn-E2-X6I" id="YBA-Hp-h0N"/>
+                        <outlet property="loadingIndicator" destination="uv1-Hi-EkF" id="on9-rP-T1y"/>
+                        <outlet property="loginStackView" destination="ePY-Zn-xzU" id="niG-b2-YaN"/>
                         <outlet property="password" destination="icT-pN-RAG" id="Yrj-Zn-bng"/>
+                        <outlet property="signInTop" destination="AOT-1p-Avn" id="qNc-bE-4BC"/>
                         <segue destination="77l-bu-sVh" kind="show" identifier="showSignUp" id="mOc-Ee-cT9"/>
                         <segue destination="dFn-jF-7ik" kind="show" identifier="showForgotPassword" id="HFY-t3-3Bj"/>
                     </connections>
@@ -976,6 +985,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1ec-F0-nru"/>
+        <segue reference="mOc-Ee-cT9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,14 +10,19 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var buttonsStackView: UIStackView!
+    @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var signInTop: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         title = "Iniciar Sesión"
+        loadingIndicator.isHidden = true
+        signInTop.constant = 20
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,5 +71,16 @@ class SignInViewController: UIViewController {
     
     @IBAction func didForgotPassword(_ sender: Any) {
         self.performSegue(withIdentifier: "showForgotPassword", sender: nil)
+    }
+    
+    func onCreateAnimation() {
+        weak var weakSelf = self
+        let top = CGAffineTransform(translationX: 0, y: -300)
+        UIView.animate(withDuration: 0.4, delay: 0.0, options: [],
+                       animations: {
+                        weakSelf?.loginStackView.transform = top
+                        weakSelf?.buttonsStackView.transform = top
+                        weakSelf?.loadingIndicator.isHidden = false
+        }, completion: nil)
     }
 }
