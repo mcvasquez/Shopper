@@ -25,10 +25,10 @@
 		2560B84E205861B7005D9E53 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84D205861B7005D9E53 /* ValidationHelper.swift */; };
 		2560B850205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */; };
 		2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */; };
+		25F8E4F8205BDFDA00171136 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4F7205BDFDA00171136 /* Double+Extensions.swift */; };
 		49BBD42B296431852066DA75 /* Pods_shopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */; };
 		5A4EA0482057F34A00B16787 /* ArticlesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA0472057F34A00B16787 /* ArticlesRouter.swift */; };
 		5A4EA04A205807EE00B16787 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA049205807EE00B16787 /* ArticlesModel.swift */; };
-		5ADEC3F5205833A00075CF68 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADEC3F4205833A00075CF68 /* Extension.swift */; };
 		5ADEC3F7205834650075CF68 /* ArticlesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADEC3F6205834650075CF68 /* ArticlesInteractor.swift */; };
 		5ADEC3FA205841D60075CF68 /* ArticlesDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADEC3F9205841D60075CF68 /* ArticlesDetailsInteractor.swift */; };
 		5AFC1320204E7A9E00310FFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AFC131F204E7A9E00310FFA /* GoogleService-Info.plist */; };
@@ -83,13 +83,13 @@
 		2560B84D205861B7005D9E53 /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
 		2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
+		25F8E4F7205BDFDA00171136 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		2B920923DFC60D8D950F7DE8 /* Pods-shopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopper/Pods-shopper.debug.xcconfig"; sourceTree = "<group>"; };
 		4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF68CFD3C2C42E3B2A1EA33 /* Pods-shopperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.release.xcconfig"; sourceTree = "<group>"; };
 		569838663CFEB837050B2D1B /* Pods-shopperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopperTests/Pods-shopperTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A4EA0472057F34A00B16787 /* ArticlesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRouter.swift; sourceTree = "<group>"; };
 		5A4EA049205807EE00B16787 /* ArticlesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesModel.swift; sourceTree = "<group>"; };
-		5ADEC3F4205833A00075CF68 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5ADEC3F6205834650075CF68 /* ArticlesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInteractor.swift; sourceTree = "<group>"; };
 		5ADEC3F9205841D60075CF68 /* ArticlesDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDetailsInteractor.swift; sourceTree = "<group>"; };
 		5AFC131E204E797300310FFA /* shopper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = shopper.entitlements; sourceTree = "<group>"; };
@@ -155,6 +155,7 @@
 		250C9CB5204C2D2000019EB1 /* shopper */ = {
 			isa = PBXGroup;
 			children = (
+				25F8E4F6205BDFA100171136 /* Extensions */,
 				5AFC132C204E885F00310FFA /* Helper */,
 				5AFC1323204E874B00310FFA /* Scenes */,
 				5AFC131E204E797300310FFA /* shopper.entitlements */,
@@ -249,6 +250,14 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
+		25F8E4F6205BDFA100171136 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				25F8E4F7205BDFDA00171136 /* Double+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3277BFB8B8B5CA5D0F638743 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,7 +310,6 @@
 				5AFC132D204E887600310FFA /* FirebaseHelper.swift */,
 				25491F732057291000DF4FD5 /* AlertsFactory.swift */,
 				2560B84D205861B7005D9E53 /* ValidationHelper.swift */,
-				5ADEC3F4205833A00075CF68 /* Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -633,13 +641,13 @@
 				2536D9982056930400B075A2 /* ArticleDetailsViewController.swift in Sources */,
 				5AFC1328204E878C00310FFA /* SignInViewController.swift in Sources */,
 				250C9CB7204C2D2000019EB1 /* AppDelegate.swift in Sources */,
+				25F8E4F8205BDFDA00171136 /* Double+Extensions.swift in Sources */,
 				2560B84E205861B7005D9E53 /* ValidationHelper.swift in Sources */,
 				2536D9A52056B3D000B075A2 /* ManageArticleViewController.swift in Sources */,
 				2560B84C20585B54005D9E53 /* ForgotPasswordViewController.swift in Sources */,
 				2536D9A220569EDC00B075A2 /* ProfileMenuTableViewController.swift in Sources */,
 				2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */,
 				5ADEC3F7205834650075CF68 /* ArticlesInteractor.swift in Sources */,
-				5ADEC3F5205833A00075CF68 /* Extension.swift in Sources */,
 				5A4EA04A205807EE00B16787 /* ArticlesModel.swift in Sources */,
 				2536D99F20569E3E00B075A2 /* ProfileViewController.swift in Sources */,
 				2536D99320567AA800B075A2 /* ArticlesViewController.swift in Sources */,

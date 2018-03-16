@@ -32,7 +32,6 @@ class ArticlesTableViewCell: UITableViewCell {
             })
             
         }
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,7 +42,7 @@ class ArticlesTableViewCell: UITableViewCell {
     
     func populateCellWithArticles(_ aArticle : Articles) {
         title.text = aArticle.title
-        price.text = "$\(String(aArticle.price))"
+        price.text = aArticle.price.toCurrency()
         thumbnail.kf.setImage(with: URL(string: aArticle.image),
                               placeholder: nil,
                               options: [.transition(.fade(1))],
