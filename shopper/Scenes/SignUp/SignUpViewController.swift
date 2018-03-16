@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func didAddProfileImage(_ sender: Any) {
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)

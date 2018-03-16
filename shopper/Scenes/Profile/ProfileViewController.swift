@@ -52,12 +52,7 @@ class ProfileViewController: UIViewController {
                                               progressBlock: nil,
                                               completionHandler: nil)
                         
-                        self.thumbnail.contentMode = .scaleAspectFit
-                        self.thumbnail.layer.borderWidth = 1
-                        self.thumbnail.layer.masksToBounds = false
-                        self.thumbnail.layer.borderColor = UIColor.black.cgColor
-                        self.thumbnail.layer.cornerRadius = self.thumbnail.frame.height/2
-                        self.thumbnail.clipsToBounds = true
+                        self.thumbnail.toRounded(borderWidth: 1, borderColor: nil)
                     }
                 }
             })

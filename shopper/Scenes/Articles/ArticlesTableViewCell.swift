@@ -48,6 +48,7 @@ class ArticlesTableViewCell: UITableViewCell {
                               options: [.transition(.fade(1))],
                               progressBlock: nil,
                               completionHandler: nil)
+        thumbnail.toRounded(borderWidth: 1, borderColor: nil)
     }
 
 }

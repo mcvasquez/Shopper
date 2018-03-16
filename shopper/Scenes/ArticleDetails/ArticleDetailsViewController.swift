@@ -27,6 +27,7 @@ class ArticleDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         thumbnail.alpha = 0.0
         stackView.alpha = 0.0
+        title = ""
         onCreateArticleInformation()
     }
     
@@ -39,6 +40,7 @@ class ArticleDetailsViewController: UIViewController {
         let df = DateFormatter()
         df.dateFormat = "dd/MM/yyyy"
         
+        title = aArticle?.title
         articleTitle.text = aArticle?.title
         condition.text = df.string(from: aArticle!.timestamp)
         price.text = aArticle!.price.toCurrency()
