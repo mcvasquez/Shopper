@@ -137,7 +137,6 @@ struct FirebaseHelper {
                 completion(true, "user has being record")
                 debugPrint("sucess")
             })
-            
         }
     }
     

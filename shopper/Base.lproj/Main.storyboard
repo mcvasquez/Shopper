@@ -415,7 +415,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-1T-Pj6">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dtx-zQ-Co8">
                                                 <rect key="frame" x="20" y="20" width="335" height="413"/>
@@ -530,7 +530,7 @@
                                     <constraint firstItem="wwz-1T-Pj6" firstAttribute="leading" secondItem="YdH-Jr-IeC" secondAttribute="leading" id="Cxy-NP-wao"/>
                                     <constraint firstAttribute="bottom" secondItem="wwz-1T-Pj6" secondAttribute="bottom" id="NBb-fb-KmM"/>
                                     <constraint firstAttribute="trailing" secondItem="wwz-1T-Pj6" secondAttribute="trailing" id="Zrf-7b-ZWa"/>
-                                    <constraint firstItem="wwz-1T-Pj6" firstAttribute="top" secondItem="YdH-Jr-IeC" secondAttribute="topMargin" constant="-8" id="cp8-NV-qVv"/>
+                                    <constraint firstItem="wwz-1T-Pj6" firstAttribute="top" secondItem="YdH-Jr-IeC" secondAttribute="top" id="cp8-NV-qVv"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -546,10 +546,14 @@
                         <viewLayoutGuide key="safeArea" id="qEE-GF-KRm"/>
                     </view>
                     <connections>
+                        <outlet property="btnThumbnail" destination="siP-5E-x14" id="jfY-OO-pJo"/>
+                        <outlet property="btnUserAction" destination="rWa-k8-p6A" id="SEd-zO-erd"/>
                         <outlet property="confirmPassword" destination="464-ib-rhJ" id="gIi-ag-SpY"/>
                         <outlet property="email" destination="MD2-BP-55y" id="xcw-y1-Irc"/>
                         <outlet property="name" destination="Dbc-AO-DU0" id="SUx-xM-fau"/>
                         <outlet property="password" destination="FpU-Zj-HnF" id="oW8-2W-iPb"/>
+                        <outlet property="svConfirmPassword" destination="hty-Jy-Yc9" id="w8y-HG-hk4"/>
+                        <outlet property="svPassword" destination="hfy-8t-nIW" id="DtM-5g-T3I"/>
                         <outlet property="thumbnail" destination="08f-XR-gWe" id="Jmp-Cb-wZX"/>
                     </connections>
                 </viewController>
@@ -846,7 +850,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favor especificar su email para recuperar su cuenta." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfj-Ln-08Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favor especificar su email para recuperar su perfil." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfj-Ln-08Z">
                                 <rect key="frame" x="20" y="84" width="335" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <nil key="textColor"/>
