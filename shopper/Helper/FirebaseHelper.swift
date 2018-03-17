@@ -18,6 +18,11 @@ struct FirebaseHelper {
         case articles
     }
     
+    enum FirebaseError {
+        case UserNotFound
+        case Unknown
+    }
+    
     static var ref: DatabaseReference! = {
         return Database.database().reference()
     }()
@@ -47,6 +52,28 @@ struct FirebaseHelper {
             completionHandler(true, "Sign Out")
         } catch  {
             completionHandler(false, "Error Sign Out")
+        }
+    }
+    
+    static func updatePassword(currentPassword: String, newPassword: String, completionHandler: @escaping (FirebaseError?) -> ()) -> () {
+        guard let user = Auth.auth().currentUser else {
+            completionHandler(.UserNotFound)
+            return
+        }
+        
+        SignInFirebase(aEmail: user.email!, aPass: currentPassword) { response, _ in
+            if response {
+                Auth.auth().currentUser?.updatePassword(to: newPassword, completion: { error in
+                    if error == nil {
+                        SignOut(completionHandler: { _,_ in })
+                        completionHandler(nil)
+                    } else {
+                        completionHandler(.Unknown)
+                    }
+                })
+            } else {
+                completionHandler(.UserNotFound)
+            }
         }
     }
     

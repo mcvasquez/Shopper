@@ -18,6 +18,10 @@ class ForgotPasswordViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         title = "Recuperar cuenta"
+        
+        if let user = Auth.auth().currentUser {
+            email.text = user.email
+        }
     }
 
     override func didReceiveMemoryWarning() {

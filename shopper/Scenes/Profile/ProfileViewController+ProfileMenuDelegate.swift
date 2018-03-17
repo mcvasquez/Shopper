@@ -22,8 +22,10 @@ extension ProfileViewController : ProfileMenuDelegate {
         } else if indexPath.section == 1 { // CONFIGURACIÓN
             switch indexPath.row {
             case 0: // Editar mi perfil
+                self.performSegue(withIdentifier: "showSignUp", sender: nil)
                 break
             case 1: // Actualizar contraseña
+                self.performSegue(withIdentifier: "showChangePassword", sender: nil)
                 break
             case 2: // Cerrar sesión
                 FirebaseHelper.SignOut(completionHandler: { response, _ in

@@ -31,6 +31,7 @@
 		25F8E4FE205C0E2200171136 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4FD205C0E2200171136 /* UIImage+Extensions.swift */; };
 		25F8E500205C2A8200171136 /* ProfileMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4FF205C2A8200171136 /* ProfileMenuDelegate.swift */; };
 		25F8E502205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E501205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift */; };
+		25F8E505205D20D600171136 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E504205D20D600171136 /* ChangePasswordViewController.swift */; };
 		49BBD42B296431852066DA75 /* Pods_shopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3476F2D7C8C60581BF2559 /* Pods_shopper.framework */; };
 		5A4EA0482057F34A00B16787 /* ArticlesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA0472057F34A00B16787 /* ArticlesRouter.swift */; };
 		5A4EA04A205807EE00B16787 /* ArticlesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4EA049205807EE00B16787 /* ArticlesModel.swift */; };
@@ -94,6 +95,7 @@
 		25F8E4FD205C0E2200171136 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		25F8E4FF205C2A8200171136 /* ProfileMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuDelegate.swift; sourceTree = "<group>"; };
 		25F8E501205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+ProfileMenuDelegate.swift"; sourceTree = "<group>"; };
+		25F8E504205D20D600171136 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		2B920923DFC60D8D950F7DE8 /* Pods-shopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopper/Pods-shopper.debug.xcconfig"; sourceTree = "<group>"; };
 		4639DF87DC5116B15F8305EB /* Pods_shopperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF68CFD3C2C42E3B2A1EA33 /* Pods-shopperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopperUITests/Pods-shopperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +275,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		25F8E503205D20B700171136 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				25F8E504205D20D600171136 /* ChangePasswordViewController.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		3277BFB8B8B5CA5D0F638743 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +309,7 @@
 		5AFC1323204E874B00310FFA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				25F8E503205D20B700171136 /* ChangePassword */,
 				2560B84A20585B3D005D9E53 /* ForgotPassword */,
 				2536D9A32056B39E00B075A2 /* ManageArticles */,
 				2536D9962056929D00B075A2 /* ArticleDetails */,
@@ -666,6 +677,7 @@
 				2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */,
 				25F8E4FE205C0E2200171136 /* UIImage+Extensions.swift in Sources */,
 				5ADEC3F7205834650075CF68 /* ArticlesInteractor.swift in Sources */,
+				25F8E505205D20D600171136 /* ChangePasswordViewController.swift in Sources */,
 				25F8E4FC205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift in Sources */,
 				5A4EA04A205807EE00B16787 /* ArticlesModel.swift in Sources */,
 				25F8E502205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift in Sources */,

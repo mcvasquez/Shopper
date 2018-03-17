@@ -183,6 +183,7 @@
                         <outlet property="profileStackView" destination="cc5-Q0-62v" id="kJw-zi-Tcz"/>
                         <outlet property="thumbnail" destination="gNQ-qe-kcW" id="hsT-kq-7b0"/>
                         <segue destination="77l-bu-sVh" kind="show" identifier="showSignUp" id="1ec-F0-nru"/>
+                        <segue destination="Q25-ub-ATy" kind="show" identifier="showChangePassword" id="Jj3-DI-wkR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RhI-QG-zfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,7 +301,107 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJp-Vo-dIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="3549"/>
+            <point key="canvasLocation" x="1542" y="3587"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="gSv-gm-iXr">
+            <objects>
+                <viewController id="Q25-ub-ATy" customClass="ChangePasswordViewController" customModule="shopper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TSL-Fu-hfG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="geZ-Bw-bP9">
+                                <rect key="frame" x="20" y="84" width="335" height="221.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aq5-yJ-wfI">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="90.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña actual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wc9-G2-lLK">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dJ3-C9-zTd">
+                                                <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgU-Z4-qVW">
+                                                <rect key="frame" x="0.0" y="60.5" width="335" height="30"/>
+                                                <state key="normal" title="¿Olvidaste tu contraseña?"/>
+                                                <connections>
+                                                    <action selector="didForgotPassword:" destination="Q25-ub-ATy" eventType="touchUpInside" id="dWj-Yp-Jgs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SiI-gm-7CF">
+                                        <rect key="frame" x="0.0" y="100.5" width="335" height="55.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña nueva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gi-dS-7Ss">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFG-i9-Szc">
+                                                <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B7d-Mm-nf6">
+                                        <rect key="frame" x="0.0" y="166" width="335" height="55.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmar contraseña nueva" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNa-TP-oQO">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9zt-Yu-fgV">
+                                                <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqQ-fE-udc">
+                                <rect key="frame" x="153.5" y="325.5" width="68" height="30"/>
+                                <state key="normal" title="Actualizar"/>
+                                <connections>
+                                    <action selector="didChangePassword:" destination="Q25-ub-ATy" eventType="touchUpInside" id="DTY-Nb-ZOG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TG6-fn-YCA" firstAttribute="trailing" secondItem="geZ-Bw-bP9" secondAttribute="trailing" constant="20" id="3EG-pZ-asv"/>
+                            <constraint firstItem="geZ-Bw-bP9" firstAttribute="top" secondItem="TG6-fn-YCA" secondAttribute="top" constant="20" id="D51-JL-Kcg"/>
+                            <constraint firstItem="eqQ-fE-udc" firstAttribute="centerX" secondItem="TSL-Fu-hfG" secondAttribute="centerX" id="kSo-kb-FrN"/>
+                            <constraint firstItem="eqQ-fE-udc" firstAttribute="top" secondItem="geZ-Bw-bP9" secondAttribute="bottom" constant="20" id="lTD-9H-k11"/>
+                            <constraint firstItem="geZ-Bw-bP9" firstAttribute="leading" secondItem="TG6-fn-YCA" secondAttribute="leading" constant="20" id="nie-wi-fF6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TG6-fn-YCA"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmNewPassword" destination="9zt-Yu-fgV" id="uzn-oI-C7l"/>
+                        <outlet property="currentPassword" destination="dJ3-C9-zTd" id="vZ4-dP-OCH"/>
+                        <outlet property="newPassword" destination="LFG-i9-Szc" id="WnC-q7-2db"/>
+                        <segue destination="dFn-jF-7ik" kind="show" identifier="showForgotPassword" id="cjC-4N-9pm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0x4-Mu-VJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2505" y="3691"/>
         </scene>
         <!--SignUp-->
         <scene sceneID="03t-IT-071">
@@ -786,7 +887,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJ0-80-8Oj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="2182"/>
+            <point key="canvasLocation" x="3503" y="2924"/>
         </scene>
         <!--Article Manage-->
         <scene sceneID="ZP1-IH-FBe">
@@ -854,7 +955,7 @@
                                                                 <rect key="frame" x="0.0" y="25.5" width="335" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -952,7 +1053,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfB-Iw-ba7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="3037"/>
+            <point key="canvasLocation" x="716" y="2182"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c8C-ZJ-wZn">
@@ -985,6 +1086,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1ec-F0-nru"/>
+        <segue reference="cjC-4N-9pm"/>
+        <segue reference="mOc-Ee-cT9"/>
     </inferredMetricsTieBreakers>
 </document>
