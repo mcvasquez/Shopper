@@ -21,7 +21,9 @@ class ManageArticleViewController: UIViewController {
     @IBOutlet weak var condition: UITextField!
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var articleDescription: UITextView!
+    
     let picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // basic usage
@@ -29,6 +31,10 @@ class ManageArticleViewController: UIViewController {
         scrollContentView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        self.articleDescription.layer.borderWidth = 1
+        self.articleDescription.layer.borderColor = UIColor.lightGray.cgColor
+        
         onBeginControllerAnimation()
     }
 
