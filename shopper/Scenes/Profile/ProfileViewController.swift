@@ -20,6 +20,31 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Mi perfil"
+        
+        loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Detect if user info has changed after SignUpViewController
+        if let transitionCoordinator = navigationController?.transitionCoordinator,
+            let fromVC = transitionCoordinator.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let toVC = transitionCoordinator.viewController(forKey: UITransitionContextViewControllerKey.to),
+            fromVC is SignUpViewController,
+            toVC is ProfileViewController {
+            
+            if (fromVC as! SignUpViewController).userDataHasChanged {
+                loadData()
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func loadData() {
         weak var weakSelf = self
         profileStackView.transform = CGAffineTransform(scaleX:0, y:0)
         profileStackView.alpha = 0.0
@@ -34,7 +59,6 @@ class ProfileViewController: UIViewController {
                             weakSelf?.profileStackView.transform = .identity
                             weakSelf?.profileStackView.alpha = 1.0
             })
-            
         }
         
         if let user =  Auth.auth().currentUser {
@@ -47,10 +71,10 @@ class ProfileViewController: UIViewController {
                     
                     if let imageUrl =  data!["thumbnail"] as? String {
                         self.thumbnail.kf.setImage(with: URL(string: imageUrl),
-                                              placeholder: nil,
-                                              options: [.transition(.fade(1))],
-                                              progressBlock: nil,
-                                              completionHandler: nil)
+                                                   placeholder: nil,
+                                                   options: [.transition(.fade(1))],
+                                                   progressBlock: nil,
+                                                   completionHandler: nil)
                         
                         self.thumbnail.toRounded(borderWidth: 1, borderColor: nil)
                     }
@@ -61,21 +85,16 @@ class ProfileViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "showProfileMenu" {
+            (segue.destination as! ProfileMenuTableViewController).delegate = self
+        }
     }
-    */
-
 }

@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-func yesNoAlert (title: String?, message:String!, positiveText: String, positiveAction: (()-> ())?, negativeText: String, negativeAction: (()-> ())? ) -> UIAlertController
-{
+func yesNoAlert (title: String?, message:String!, positiveText: String, positiveAction: (()-> ())?, negativeText: String, negativeAction: (()-> ())? ) -> UIAlertController {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: positiveText, style: .default, handler: { action in
         positiveAction?()
@@ -23,8 +22,7 @@ func yesNoAlert (title: String?, message:String!, positiveText: String, positive
     return alert
 }
 
-func yesAlert(title: String?, message:String!, positiveText: String, positiveAction: (()-> ())?) -> UIAlertController
-{
+func yesAlert(title: String?, message:String!, positiveText: String, positiveAction: (()-> ())?) -> UIAlertController {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: positiveText, style: .default, handler: { action in
         positiveAction?()

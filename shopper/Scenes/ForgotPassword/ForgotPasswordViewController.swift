@@ -17,7 +17,11 @@ class ForgotPasswordViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Recuperar cuenta"
+        title = "Recuperar perfil"
+        
+        if let user = Auth.auth().currentUser {
+            email.text = user.email
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,7 +54,7 @@ class ForgotPasswordViewController: UIViewController {
         
         Auth.auth().sendPasswordReset(withEmail: email.text!) { error in
             if error == nil {
-                self.present(yesAlert(title: "Información", message: "Se ha enviado las instrucciones a su email para recuperar su cuenta.", positiveText: "Ok", positiveAction: {
+                self.present(yesAlert(title: "Información", message: "Se ha enviado las instrucciones a su email para recuperar su perfil.", positiveText: "Ok", positiveAction: {
                     self.navigationController?.popToRootViewController(animated: true)
                 }), animated: true, completion: nil)
             } else {

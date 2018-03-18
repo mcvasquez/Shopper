@@ -18,6 +18,11 @@ struct FirebaseHelper {
         case articles
     }
     
+    enum FirebaseError {
+        case UserNotFound
+        case Unknown
+    }
+    
     static var ref: DatabaseReference! = {
         return Database.database().reference()
     }()
@@ -47,6 +52,28 @@ struct FirebaseHelper {
             completionHandler(true, "Sign Out")
         } catch  {
             completionHandler(false, "Error Sign Out")
+        }
+    }
+    
+    static func updatePassword(currentPassword: String, newPassword: String, completionHandler: @escaping (FirebaseError?) -> ()) -> () {
+        guard let user = Auth.auth().currentUser else {
+            completionHandler(.UserNotFound)
+            return
+        }
+        
+        SignInFirebase(aEmail: user.email!, aPass: currentPassword) { response, _ in
+            if response {
+                Auth.auth().currentUser?.updatePassword(to: newPassword, completion: { error in
+                    if error == nil {
+                        SignOut(completionHandler: { _,_ in })
+                        completionHandler(nil)
+                    } else {
+                        completionHandler(.Unknown)
+                    }
+                })
+            } else {
+                completionHandler(.UserNotFound)
+            }
         }
     }
     
@@ -110,7 +137,6 @@ struct FirebaseHelper {
                 completion(true, "user has being record")
                 debugPrint("sucess")
             })
-            
         }
     }
     
@@ -119,7 +145,7 @@ struct FirebaseHelper {
         return ref.queryOrdered(byChild: "position")
     }
     
-    static func setArticleData(address: String ,image: UIImage, description: String, price: String, title : String, completion: @escaping (Bool,String) -> ()) {
+    static func setArticleData(id: String?, address: String ,image: UIImage, description: String, price: String, title : String, completion: @escaping (Bool,String) -> ()) {
         uploadImage(image: image) { (url, message) in
             debugPrint(message)
             guard url != nil else {
@@ -128,7 +154,10 @@ struct FirebaseHelper {
             }
             let userID = Auth.auth().currentUser?.uid
             let aPrice = Double(price)
-            let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(UUID().uuidString)
+            
+            let aId: String = id ?? UUID().uuidString
+            
+            let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(aId)
             let timestamp = Date().timeIntervalSince1970
             let values = [
                 "address": address,
@@ -141,17 +170,50 @@ struct FirebaseHelper {
                 "user/\(userID!)" : true
             ] as [String : Any]
             
-            artReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
-                
+            artReference.updateChildValues(values, withCompletionBlock: { (error, dbRef) in
                 print("sucess")
                 guard error == nil else {
                     return
                 }
                 
+                guard Auth.auth().currentUser != nil else {
+                    completion(true, "user has being record")
+                    return
+                }
+                
+                ref.child(FirebaseDBKeys.users.rawValue)
+                    .child(Auth.auth().currentUser!.uid)
+                    .child(FirebaseDBKeys.articles.rawValue)
+                    .child(aId).setValue(true)
+                
                 completion(true, "user has being record")
                 debugPrint("sucess")
             })
-            
+        }
+    }
+    
+    static func removeArticle(id: String, completion: @escaping (Error?) -> ()) -> () {
+        // Delete article
+        ref.child(FirebaseDBKeys.articles.rawValue)
+            .child(id)
+            .removeValue { error, dbRef in
+                if error == nil {
+                    // Delete article in user
+                    guard Auth.auth().currentUser != nil else {
+                        completion(nil)
+                        return
+                    }
+                    
+                    ref.child(FirebaseDBKeys.users.rawValue)
+                        .child(Auth.auth().currentUser!.uid)
+                        .child(FirebaseDBKeys.articles.rawValue)
+                        .child(id)
+                        .removeValue()
+                    
+                    completion(nil)
+                } else {
+                   completion(error)
+                }
         }
     }
 }
