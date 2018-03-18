@@ -68,7 +68,7 @@ extension ArticlesViewController {
             FirebaseHelper.removeArticle(id: article!.id, completion: { error in
                 if error != nil {
                     self.present(yesAlert(title: "Información",
-                                          message: "Hubo un error eliminando el articulo. Favor intentar más tarde.",
+                                          message: "Hubo un error eliminando el artículo. Favor intentar más tarde.",
                                           positiveText: "OK",
                                           positiveAction: nil),
                                  animated: true,
@@ -80,7 +80,9 @@ extension ArticlesViewController {
         rowActions.append(delete)
         
         let edit = UITableViewRowAction(style: .normal, title: "Editar", handler: { action, indexPath in
-            
+            guard article != nil else { return }
+            self.editableArticle = article
+            self.goingToPerformSegue("showArticleCreate")
         })
         edit.backgroundColor = UIColor(red:0.96, green:0.79, blue:0.22, alpha:1.0)
         rowActions.append(edit)

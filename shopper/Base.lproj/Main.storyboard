@@ -208,7 +208,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Mis articulos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rTM-90-TnL">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Mis artículos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rTM-90-TnL">
                                                     <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1007,7 +1007,7 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT6-yk-sJW">
                                                 <rect key="frame" x="140.5" y="483" width="94" height="30"/>
-                                                <state key="normal" title="Crear articulo"/>
+                                                <state key="normal" title="Crear artículo"/>
                                                 <connections>
                                                     <action selector="didManageArticle:" destination="VhG-hT-UeI" eventType="touchUpInside" id="OE0-t2-QNv"/>
                                                 </connections>
@@ -1047,6 +1047,8 @@
                         <outlet property="address" destination="LgS-hQ-LBE" id="Vn9-O4-5XP"/>
                         <outlet property="articleDescription" destination="2lx-Hq-uKO" id="ww0-ND-ihm"/>
                         <outlet property="articleTitle" destination="f4M-wd-2nf" id="o6T-H9-Qy1"/>
+                        <outlet property="btnArticleAction" destination="IT6-yk-sJW" id="5aQ-ni-cKh"/>
+                        <outlet property="btnThumbnail" destination="9Sg-0t-11f" id="Dag-BA-2rI"/>
                         <outlet property="contentView" destination="Gn8-fp-qF8" id="rZ0-xW-2x1"/>
                         <outlet property="contentViewWidth" destination="lwO-Og-JxC" id="p9U-4S-bzJ"/>
                         <outlet property="price" destination="fu5-I9-Owi" id="hd3-ps-fu0"/>

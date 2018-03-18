@@ -145,7 +145,7 @@ struct FirebaseHelper {
         return ref.queryOrdered(byChild: "position")
     }
     
-    static func setArticleData(address: String ,image: UIImage, description: String, price: String, title : String, completion: @escaping (Bool,String) -> ()) {
+    static func setArticleData(id: String?, address: String ,image: UIImage, description: String, price: String, title : String, completion: @escaping (Bool,String) -> ()) {
         uploadImage(image: image) { (url, message) in
             debugPrint(message)
             guard url != nil else {
@@ -154,8 +154,10 @@ struct FirebaseHelper {
             }
             let userID = Auth.auth().currentUser?.uid
             let aPrice = Double(price)
-            let id = UUID().uuidString
-            let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(id)
+            
+            let aId: String = id ?? UUID().uuidString
+            
+            let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(aId)
             let timestamp = Date().timeIntervalSince1970
             let values = [
                 "address": address,
@@ -182,7 +184,7 @@ struct FirebaseHelper {
                 ref.child(FirebaseDBKeys.users.rawValue)
                     .child(Auth.auth().currentUser!.uid)
                     .child(FirebaseDBKeys.articles.rawValue)
-                    .child(id).setValue(true)
+                    .child(aId).setValue(true)
                 
                 completion(true, "user has being record")
                 debugPrint("sucess")

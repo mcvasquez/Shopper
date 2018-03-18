@@ -14,12 +14,13 @@ class ArticlesViewController: UIViewController, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     var tableViewViewDataSource: FUITableViewDataSource!
+    var editableArticle: Articles?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Articulos"
+        title = "Artículos"
         let userAccountItem = UIBarButtonItem(image: UIImage(named: "UserAccount"), style: .plain, target: self, action: #selector(didSelectUserAccount))
         let articleAccountItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(didSelectCreateArticle))
         self.navigationItem.leftBarButtonItem = userAccountItem

@@ -25,10 +25,11 @@ extension ArticlesViewController {
     @objc func didSelectCreateArticle() {
         FirebaseHelper.isAlreadySignIn { response, _ in
             if response {
+                self.editableArticle = nil
                 self.goingToPerformSegue("showArticleCreate")
             } else {
                 self.present(yesNoAlert(title: "Información",
-                                        message: "Debe iniciar sesión para crear articulos.",
+                                        message: "Debe iniciar sesión para crear artículos.",
                                         positiveText: "Iniciar Sesión", positiveAction: {
                                             self.goingToPerformSegue("showSignIn")
                                         },
@@ -52,6 +53,9 @@ extension ArticlesViewController {
                 let mArticle = tableViewViewDataSource.snapshot(at: row)
                 aDetailVC.aArticle = Articles.init(snapshot: mArticle)!
             }
+        } else if segue.identifier == "showArticleCreate" {
+            let manageArticleVC = segue.destination as! ManageArticleViewController
+            manageArticleVC.editableArticle = self.editableArticle
         }
     }
 }
