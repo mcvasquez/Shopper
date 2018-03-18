@@ -154,7 +154,8 @@ struct FirebaseHelper {
             }
             let userID = Auth.auth().currentUser?.uid
             let aPrice = Double(price)
-            let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(UUID().uuidString)
+            let id = UUID().uuidString
+            let artReference = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue).child(id)
             let timestamp = Date().timeIntervalSince1970
             let values = [
                 "address": address,
@@ -167,17 +168,50 @@ struct FirebaseHelper {
                 "user/\(userID!)" : true
             ] as [String : Any]
             
-            artReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
-                
+            artReference.updateChildValues(values, withCompletionBlock: { (error, dbRef) in
                 print("sucess")
                 guard error == nil else {
                     return
                 }
                 
+                guard Auth.auth().currentUser != nil else {
+                    completion(true, "user has being record")
+                    return
+                }
+                
+                ref.child(FirebaseDBKeys.users.rawValue)
+                    .child(Auth.auth().currentUser!.uid)
+                    .child(FirebaseDBKeys.articles.rawValue)
+                    .child(id).setValue(true)
+                
                 completion(true, "user has being record")
                 debugPrint("sucess")
             })
-            
+        }
+    }
+    
+    static func removeArticle(id: String, completion: @escaping (Error?) -> ()) -> () {
+        // Delete article
+        ref.child(FirebaseDBKeys.articles.rawValue)
+            .child(id)
+            .removeValue { error, dbRef in
+                if error == nil {
+                    // Delete article in user
+                    guard Auth.auth().currentUser != nil else {
+                        completion(nil)
+                        return
+                    }
+                    
+                    ref.child(FirebaseDBKeys.users.rawValue)
+                        .child(Auth.auth().currentUser!.uid)
+                        .child(FirebaseDBKeys.articles.rawValue)
+                        .child(id)
+                        .removeValue()
+                    
+                    completion(nil)
+                } else {
+                   completion(error)
+                }
         }
     }
 }
