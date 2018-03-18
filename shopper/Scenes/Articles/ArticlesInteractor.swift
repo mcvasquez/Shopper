@@ -15,6 +15,7 @@ import FirebaseDatabase
 extension ArticlesViewController {
     
     func onCreateTableview() {
+        
         tableViewViewDataSource = self.tableView.bind(to: FirebaseHelper.articlesQuery(),
                                                       populateCell: populateCellBlock(),
                                                       commitEdit: commitEditBlock(),
