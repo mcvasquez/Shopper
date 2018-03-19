@@ -25,6 +25,7 @@
 		2560B84E205861B7005D9E53 /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84D205861B7005D9E53 /* ValidationHelper.swift */; };
 		2560B850205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */; };
 		2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */; };
+		25A6FED82060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A6FED72060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift */; };
 		25F8E4F8205BDFDA00171136 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4F7205BDFDA00171136 /* Double+Extensions.swift */; };
 		25F8E4FA205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4F9205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift */; };
 		25F8E4FC205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4FB205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift */; };
@@ -92,6 +93,7 @@
 		2560B84D205861B7005D9E53 /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
 		2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
+		25A6FED72060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UNUserNotificationCenterDelegate.swift"; sourceTree = "<group>"; };
 		25F8E4F7205BDFDA00171136 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		25F8E4F9205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageArticleViewController+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
 		25F8E4FB205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageArticleViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				5AFC1323204E874B00310FFA /* Scenes */,
 				5AFC131E204E797300310FFA /* shopper.entitlements */,
 				250C9CB6204C2D2000019EB1 /* AppDelegate.swift */,
+				25A6FED72060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift */,
 				250C9CBA204C2D2000019EB1 /* Main.storyboard */,
 				250C9CBD204C2D2000019EB1 /* Assets.xcassets */,
 				250C9CBF204C2D2000019EB1 /* LaunchScreen.storyboard */,
@@ -670,6 +673,7 @@
 				2536D99520567E6300B075A2 /* ArticlesTableViewCell.swift in Sources */,
 				25F8E50D205EF3CC00171136 /* ArticlesViewController+UISearchControllerDelegate.swift in Sources */,
 				25491F742057291000DF4FD5 /* AlertsFactory.swift in Sources */,
+				25A6FED82060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift in Sources */,
 				5ADEC3FA205841D60075CF68 /* ArticlesDetailsInteractor.swift in Sources */,
 				2536D99C20569D7000B075A2 /* SignUpViewController.swift in Sources */,
 				25F8E4FA205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift in Sources */,
