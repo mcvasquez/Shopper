@@ -26,6 +26,14 @@
 		2560B850205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */; };
 		2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */; };
 		25A6FED82060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A6FED72060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift */; };
+		25B3DA092063AF9D00C3EEA0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA082063AF9D00C3EEA0 /* ChatViewController.swift */; };
+		25B3DA0B2063B56A00C3EEA0 /* ChatViewController+MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA0A2063B56A00C3EEA0 /* ChatViewController+MessagesDataSource.swift */; };
+		25B3DA0D2063B94700C3EEA0 /* ChatViewController+MessagesDisplayDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA0C2063B94700C3EEA0 /* ChatViewController+MessagesDisplayDelegate.swift */; };
+		25B3DA0F2063B9BA00C3EEA0 /* ChatViewController+MessagesLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA0E2063B9BA00C3EEA0 /* ChatViewController+MessagesLayoutDelegate.swift */; };
+		25B3DA112063B9EC00C3EEA0 /* ChatViewController+MessageCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA102063B9EC00C3EEA0 /* ChatViewController+MessageCellDelegate.swift */; };
+		25B3DA142063BA1E00C3EEA0 /* ChatViewController+MessageLabelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA132063BA1E00C3EEA0 /* ChatViewController+MessageLabelDelegate.swift */; };
+		25B3DA162063BA4E00C3EEA0 /* ChatViewController+MessageInputBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA152063BA4E00C3EEA0 /* ChatViewController+MessageInputBarDelegate.swift */; };
+		25B3DA182063D14100C3EEA0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B3DA172063D14100C3EEA0 /* Message.swift */; };
 		25F8E4F8205BDFDA00171136 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4F7205BDFDA00171136 /* Double+Extensions.swift */; };
 		25F8E4FA205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4F9205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift */; };
 		25F8E4FC205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F8E4FB205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift */; };
@@ -94,6 +102,14 @@
 		2560B84F205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
 		2560B851205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
 		25A6FED72060288D005F07E4 /* AppDelegate+UNUserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+UNUserNotificationCenterDelegate.swift"; sourceTree = "<group>"; };
+		25B3DA082063AF9D00C3EEA0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		25B3DA0A2063B56A00C3EEA0 /* ChatViewController+MessagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+MessagesDataSource.swift"; sourceTree = "<group>"; };
+		25B3DA0C2063B94700C3EEA0 /* ChatViewController+MessagesDisplayDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+MessagesDisplayDelegate.swift"; sourceTree = "<group>"; };
+		25B3DA0E2063B9BA00C3EEA0 /* ChatViewController+MessagesLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+MessagesLayoutDelegate.swift"; sourceTree = "<group>"; };
+		25B3DA102063B9EC00C3EEA0 /* ChatViewController+MessageCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+MessageCellDelegate.swift"; sourceTree = "<group>"; };
+		25B3DA132063BA1E00C3EEA0 /* ChatViewController+MessageLabelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+MessageLabelDelegate.swift"; sourceTree = "<group>"; };
+		25B3DA152063BA4E00C3EEA0 /* ChatViewController+MessageInputBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController+MessageInputBarDelegate.swift"; sourceTree = "<group>"; };
+		25B3DA172063D14100C3EEA0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		25F8E4F7205BDFDA00171136 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		25F8E4F9205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageArticleViewController+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
 		25F8E4FB205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManageArticleViewController+UIImagePickerControllerDelegate.swift"; sourceTree = "<group>"; };
@@ -276,6 +292,21 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
+		25B3DA072063AF7000C3EEA0 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				25B3DA082063AF9D00C3EEA0 /* ChatViewController.swift */,
+				25B3DA0A2063B56A00C3EEA0 /* ChatViewController+MessagesDataSource.swift */,
+				25B3DA0C2063B94700C3EEA0 /* ChatViewController+MessagesDisplayDelegate.swift */,
+				25B3DA0E2063B9BA00C3EEA0 /* ChatViewController+MessagesLayoutDelegate.swift */,
+				25B3DA102063B9EC00C3EEA0 /* ChatViewController+MessageCellDelegate.swift */,
+				25B3DA132063BA1E00C3EEA0 /* ChatViewController+MessageLabelDelegate.swift */,
+				25B3DA152063BA4E00C3EEA0 /* ChatViewController+MessageInputBarDelegate.swift */,
+				25B3DA172063D14100C3EEA0 /* Message.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		25F8E4F6205BDFA100171136 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,11 +351,12 @@
 		5AFC1323204E874B00310FFA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				25F8E503205D20B700171136 /* ChangePassword */,
-				2560B84A20585B3D005D9E53 /* ForgotPassword */,
-				2536D9A32056B39E00B075A2 /* ManageArticles */,
 				2536D9962056929D00B075A2 /* ArticleDetails */,
 				2536D99120567A4A00B075A2 /* Articles */,
+				25F8E503205D20B700171136 /* ChangePassword */,
+				25B3DA072063AF7000C3EEA0 /* Chat */,
+				2560B84A20585B3D005D9E53 /* ForgotPassword */,
+				2536D9A32056B39E00B075A2 /* ManageArticles */,
 				2536D99D20569E2800B075A2 /* Profile */,
 				2536D9A020569EC000B075A2 /* ProfileMenu */,
 				5AFC1324204E875200310FFA /* SignIn */,
@@ -679,7 +711,9 @@
 				5ADEC3FA205841D60075CF68 /* ArticlesDetailsInteractor.swift in Sources */,
 				2536D99C20569D7000B075A2 /* SignUpViewController.swift in Sources */,
 				25F8E4FA205C070E00171136 /* ManageArticleViewController+UINavigationControllerDelegate.swift in Sources */,
+				25B3DA182063D14100C3EEA0 /* Message.swift in Sources */,
 				25F8E500205C2A8200171136 /* ProfileMenuDelegate.swift in Sources */,
+				25B3DA0D2063B94700C3EEA0 /* ChatViewController+MessagesDisplayDelegate.swift in Sources */,
 				5A4EA0482057F34A00B16787 /* ArticlesRouter.swift in Sources */,
 				5AFC132E204E887600310FFA /* FirebaseHelper.swift in Sources */,
 				2536D9982056930400B075A2 /* ArticleDetailsViewController.swift in Sources */,
@@ -688,20 +722,26 @@
 				25F8E4F8205BDFDA00171136 /* Double+Extensions.swift in Sources */,
 				2560B84E205861B7005D9E53 /* ValidationHelper.swift in Sources */,
 				2536D9A52056B3D000B075A2 /* ManageArticleViewController.swift in Sources */,
+				25B3DA0F2063B9BA00C3EEA0 /* ChatViewController+MessagesLayoutDelegate.swift in Sources */,
 				2560B84C20585B54005D9E53 /* ForgotPasswordViewController.swift in Sources */,
 				25F8E509205D7BF600171136 /* UITableView+Extensions.swift in Sources */,
 				2536D9A220569EDC00B075A2 /* ProfileMenuTableViewController.swift in Sources */,
+				25B3DA162063BA4E00C3EEA0 /* ChatViewController+MessageInputBarDelegate.swift in Sources */,
+				25B3DA0B2063B56A00C3EEA0 /* ChatViewController+MessagesDataSource.swift in Sources */,
 				2560B852205877BE005D9E53 /* SignUpViewController+UINavigationControllerDelegate.swift in Sources */,
 				25F8E4FE205C0E2200171136 /* UIImage+Extensions.swift in Sources */,
 				5ADEC3F7205834650075CF68 /* ArticlesInteractor.swift in Sources */,
 				25F8E50B205D7CDB00171136 /* EditableTableDataSource.swift in Sources */,
 				25F8E505205D20D600171136 /* ChangePasswordViewController.swift in Sources */,
 				25F8E4FC205C079200171136 /* ManageArticleViewController+UIImagePickerControllerDelegate.swift in Sources */,
+				25B3DA112063B9EC00C3EEA0 /* ChatViewController+MessageCellDelegate.swift in Sources */,
 				5A4EA04A205807EE00B16787 /* ArticlesModel.swift in Sources */,
+				25B3DA142063BA1E00C3EEA0 /* ChatViewController+MessageLabelDelegate.swift in Sources */,
 				25F8E502205C375D00171136 /* ProfileViewController+ProfileMenuDelegate.swift in Sources */,
 				2536D99F20569E3E00B075A2 /* ProfileViewController.swift in Sources */,
 				2536D99320567AA800B075A2 /* ArticlesViewController.swift in Sources */,
 				2560B850205876AA005D9E53 /* SignUpViewController+UIImagePickerControllerDelegate.swift in Sources */,
+				25B3DA092063AF9D00C3EEA0 /* ChatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

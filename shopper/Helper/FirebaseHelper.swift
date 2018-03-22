@@ -27,7 +27,6 @@ struct FirebaseHelper {
         return Database.database().reference()
     }()
     
-    
     static func SignInFirebase(aEmail: String, aPass: String, completionHandler: @escaping (Bool, String) -> ()) {
         Auth.auth().signIn(withEmail: aEmail, password: aPass) { (user, error) in
             guard error == nil else {

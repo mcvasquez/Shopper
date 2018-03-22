@@ -78,5 +78,9 @@ class ArticleDetailsViewController: UIViewController {
     }
     // MARK: - Actions
     @IBAction func didContactButton(_ sender: Any) {
+        let chatViewController = ChatViewController()
+        chatViewController.userReceiverId = aArticle?.user
+        
+        navigationController?.pushViewController(chatViewController, animated: true)
     }
 }
