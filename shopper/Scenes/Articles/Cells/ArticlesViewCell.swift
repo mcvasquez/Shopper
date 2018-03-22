@@ -1,15 +1,14 @@
 //
-//  ArticlesTableViewCell.swift
+//  ArticlesViewCell.swift
 //  shopper
 //
-//  Created by Misael Cuevas Vásquez on 3/12/18.
+//  Created by Daniel Cabrera on 22/03/2018.
 //  Copyright © 2018 Cuevas Cabrera. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
 
-class ArticlesTableViewCell: UITableViewCell {
+class ArticlesViewCell: UITableViewCell {
 
     @IBOutlet weak var articlesCellView: UIView!
     @IBOutlet weak var thumbnail: UIImageView!
@@ -33,10 +32,10 @@ class ArticlesTableViewCell: UITableViewCell {
             
         }
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -50,5 +49,5 @@ class ArticlesTableViewCell: UITableViewCell {
                               completionHandler: nil)
         thumbnail.toRounded(borderWidth: 1, borderColor: nil)
     }
-
+    
 }

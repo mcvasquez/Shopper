@@ -25,11 +25,11 @@ extension ArticlesViewController {
     // MARK: TableView Data Source
     func populateCellBlock() -> EditableTableDataSource.PopulateCellBlock {
         return { tableView, indexPath, snapshot in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "articlesCell")
-                as! ArticlesTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "articlesCell", for: indexPath)
+                as! ArticlesViewCell
             if let aArticle = Articles.init(snapshot: snapshot) {
-                cell.populateCellWithArticles(aArticle)
-            }
+                   cell.populateCellWithArticles(aArticle)
+                }
             return cell
         }
     }
