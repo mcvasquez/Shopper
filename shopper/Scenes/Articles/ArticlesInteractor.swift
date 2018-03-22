@@ -16,7 +16,7 @@ extension ArticlesViewController {
     
     func onCreateTableview() {
         
-        tableViewViewDataSource = self.tableView.bind(to: FirebaseHelper.articlesQuery(),
+        tableViewViewDataSource = self.tableView.bind(to: FirebaseHelper.articlesQuery(isFromUser),
                                                       populateCell: populateCellBlock(),
                                                       commitEdit: commitEditBlock(),
                                                       commitCanEdit: commitCanEditBlock())
@@ -27,6 +27,7 @@ extension ArticlesViewController {
         return { tableView, indexPath, snapshot in
             let cell = tableView.dequeueReusableCell(withIdentifier: "articlesCell", for: indexPath)
                 as! ArticlesViewCell
+            debugPrint(snapshot)
             if let aArticle = Articles.init(snapshot: snapshot) {
                    cell.populateCellWithArticles(aArticle)
                 }

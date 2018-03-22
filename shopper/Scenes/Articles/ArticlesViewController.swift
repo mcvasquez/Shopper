@@ -15,16 +15,20 @@ class ArticlesViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var tableViewViewDataSource: FUITableViewDataSource!
     var editableArticle: Articles?
+    var isFromUser : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "Artículos"
-        let userAccountItem = UIBarButtonItem(image: UIImage(named: "UserAccount"), style: .plain, target: self, action: #selector(didSelectUserAccount))
-        let articleAccountItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(didSelectCreateArticle))
-        self.navigationItem.leftBarButtonItem = userAccountItem
-        self.navigationItem.rightBarButtonItem = articleAccountItem
+        title = "Mis Artículos"
+        if !isFromUser {
+            title = "Artículos"
+            let userAccountItem = UIBarButtonItem(image: UIImage(named: "UserAccount"), style: .plain, target: self, action: #selector(didSelectUserAccount))
+            let articleAccountItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(didSelectCreateArticle))
+            self.navigationItem.leftBarButtonItem = userAccountItem
+            self.navigationItem.rightBarButtonItem = articleAccountItem
+        }
         let nib = UINib.init(nibName: "ArticlesViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "articlesCell")
         onCreateTableview()
