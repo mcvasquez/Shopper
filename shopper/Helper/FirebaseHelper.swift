@@ -139,9 +139,10 @@ struct FirebaseHelper {
         }
     }
     
-    static func articlesQuery() -> DatabaseQuery  {
+    static func articlesQuery(_ isFromUser : Bool) -> DatabaseQuery  {
         let ref = FirebaseHelper.ref.child(FirebaseDBKeys.articles.rawValue)
-        return ref.queryOrdered(byChild: "position")
+        let userID = Auth.auth().currentUser?.uid
+        return isFromUser ? ref.queryOrdered(byChild: "user/\(userID!)").queryEqual(toValue: true) : ref.queryOrdered(byChild: "position")
     }
     
     static func setArticleData(id: String?, address: String ,image: UIImage, description: String, price: String, title : String, completion: @escaping (Bool,String) -> ()) {

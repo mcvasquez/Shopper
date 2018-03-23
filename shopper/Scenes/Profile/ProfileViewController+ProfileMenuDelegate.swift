@@ -13,6 +13,7 @@ extension ProfileViewController : ProfileMenuDelegate {
         if indexPath.section == 0 { // GENERAL
             switch indexPath.row {
             case 0: // Mis articulos
+                self.performSegue(withIdentifier: "myArticle", sender: nil)
                 break
             case 1: // Mis pedidos
                 break

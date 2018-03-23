@@ -83,10 +83,11 @@ class ManageArticleViewController: UIViewController {
             debugPrint(message)
             if sucess {
                 self.view.makeToast("Artículo enviado :)")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.navigationController?.popViewController(animated: true)
-                }
             }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
